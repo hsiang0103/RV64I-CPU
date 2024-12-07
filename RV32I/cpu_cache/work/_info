@@ -1,0 +1,539 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/SystemC/piyan-cpu/RV32I/cpu
+vAdder
+Z0 !s110 1733540305
+!i10b 1
+!s100 M`9@?SX7^5HCQ3kJ9A;az0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IU9<K?g0KA@j<fd[`HNd8E2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dD:/SystemC/piyan-cpu/RV32I/cpu_cache
+w1733494472
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Adder.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Adder.v
+!i122 918
+L0 1 10
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1733540305.000000
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Adder.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@adder
+vALU
+R0
+!i10b 1
+!s100 DBP4A;JQL?k@FhW^KUhYY2
+R1
+ImVRG7]O^2HL3;BDOnazcm3
+R2
+R3
+w1733539939
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/ALU.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/ALU.v
+!i122 919
+Z8 L0 1 60
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/ALU.v|
+!i113 1
+R6
+R7
+n@a@l@u
+vcontrol_E
+Z9 !s110 1733540306
+!i10b 1
+!s100 HGi7IV?]aF;0AYUzVnUPe0
+R1
+I4OjU3T=WAe^6KkaL=V2XH3
+R2
+R3
+w1733535880
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_E.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_E.v
+!i122 920
+R8
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_E.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_E.v|
+!i113 1
+R6
+R7
+ncontrol_@e
+vcontrol_M
+R9
+!i10b 1
+!s100 BXn]337=iiDDK:[n1]8A?3
+R1
+IH=;enigER`]8BPV8X_QaF2
+R2
+R3
+w1733535916
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v
+!i122 921
+Z10 L0 1 35
+R4
+r1
+!s85 0
+31
+Z11 !s108 1733540306.000000
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v|
+!i113 1
+R6
+R7
+ncontrol_@m
+vcontrol_W
+R9
+!i10b 1
+!s100 1_0a?5;`?82^TGIG_E8zI3
+R1
+IlF770gCCQFBlBTnLcZo=h2
+R2
+R3
+w1733535957
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_W.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_W.v
+!i122 922
+R10
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_W.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_W.v|
+!i113 1
+R6
+R7
+ncontrol_@w
+vController
+R9
+!i10b 1
+!s100 0K6io=<k7QFOnMM@J][U>3
+R1
+IFKC@aQ@BYLXgDHHN[znS<3
+R2
+R3
+w1733540094
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Controller.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Controller.v
+!i122 923
+L0 1 287
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Controller.v|
+!i113 1
+R6
+R7
+n@controller
+vCPU
+R9
+!i10b 1
+!s100 1^`@gk=H^QZFJIMif7nID2
+R1
+I<PlZ]:F`gz;jkE7bDHF0Y0
+R2
+R3
+w1733540302
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/CPU.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/CPU.v
+!i122 924
+L0 1 77
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/CPU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/CPU.v|
+!i113 1
+R6
+R7
+n@c@p@u
+vdecoder
+R9
+!i10b 1
+!s100 4=K9I>WYl@^W<fRFW5n:>2
+R1
+In=Ec;8eWQliC:LElRaJV>1
+R2
+R3
+w1733494506
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/decoder.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/decoder.v
+!i122 925
+L0 1 15
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/decoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/decoder.v|
+!i113 1
+R6
+R7
+vImme_Ext
+R9
+!i10b 1
+!s100 _nYl4f^NHhK>C9zBT>4Kd2
+R1
+IEHj56UoY;DE3nJLa]eenf2
+R2
+R3
+w1733495252
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Imme_Ext.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Imme_Ext.v
+!i122 926
+L0 1 68
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Imme_Ext.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Imme_Ext.v|
+!i113 1
+R6
+R7
+n@imme_@ext
+vJB_Unit
+R9
+!i10b 1
+!s100 bFgkbPogY^6?L@E::?o=U0
+R1
+IQ_?jNW?8^@0UGH^28M>YB3
+R2
+R3
+w1733494512
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v
+!i122 927
+L0 1 19
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v|
+!i113 1
+R6
+R7
+n@j@b_@unit
+vLD_Filter
+Z12 !s110 1733540307
+!i10b 1
+!s100 kVDZL27m4`kg86Yim8eDb2
+R1
+IGe5[WKXDLzW]EhWGT]_MH2
+R2
+R3
+w1733494514
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/LD_Filter.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/LD_Filter.v
+!i122 928
+L0 1 40
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/LD_Filter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/LD_Filter.v|
+!i113 1
+R6
+R7
+n@l@d_@filter
+vMux
+R12
+!i10b 1
+!s100 R9<z@biVnF^VCXc=TZ`M10
+R1
+I<m2JYRVH0mUa496^c>:1;3
+R2
+R3
+w1733494518
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v
+!i122 929
+L0 1 6
+R4
+r1
+!s85 0
+31
+Z13 !s108 1733540307.000000
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v|
+!i113 1
+R6
+R7
+n@mux
+vMux3
+R12
+!i10b 1
+!s100 2<BD]@Pe?egzf7U8K3h7>1
+R1
+I;UXhZhckAIZRM[]nk?eOk2
+R2
+R3
+w1733494530
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v
+!i122 930
+L0 1 7
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v|
+!i113 1
+R6
+R7
+n@mux3
+vReg_D
+R12
+!i10b 1
+!s100 T`Xge2OX@^>S0[M89c_B]1
+R1
+IYLZ<IYOnK_[VPYE;L0nZI2
+R2
+R3
+w1733536105
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_D.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_D.v
+!i122 931
+L0 1 36
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_D.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_D.v|
+!i113 1
+R6
+R7
+n@reg_@d
+vReg_E
+R12
+!i10b 1
+!s100 n10R^LF:0Y`A2:JJ;SFe33
+R1
+I>bIBhD_S:L0AQ@lN?OIPH2
+R2
+R3
+w1733536170
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v
+!i122 932
+L0 1 49
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v|
+!i113 1
+R6
+R7
+n@reg_@e
+vReg_M
+R12
+!i10b 1
+!s100 GY7d40^7XRJ=cT5g^;7Qa1
+R1
+I:?J8gVm3d:=K:LFY`1I4b2
+R2
+R3
+w1733536173
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_M.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_M.v
+!i122 933
+Z14 L0 1 29
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_M.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_M.v|
+!i113 1
+R6
+R7
+n@reg_@m
+vReg_PC
+R12
+!i10b 1
+!s100 EJcIQ=A>YN0G9gMP<GDQ:2
+R1
+IPR5NR=W706ga6@7n1g`742
+R2
+R3
+w1733536175
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_PC.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_PC.v
+!i122 934
+L0 1 26
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_PC.v|
+!i113 1
+R6
+R7
+n@reg_@p@c
+vReg_W
+R12
+!i10b 1
+!s100 k8L6oHUFM^J[1AR=FYTh43
+R1
+I>Zd2e[=iD^]MfBGN2PB040
+R2
+R3
+w1733536191
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_W.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_W.v
+!i122 935
+R14
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_W.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_W.v|
+!i113 1
+R6
+R7
+n@reg_@w
+vRegFile
+Z15 !s110 1733540308
+!i10b 1
+!s100 oDR50m>8Yg^1@Xe^@g7`23
+R1
+I_5DojS:]MioT5WSWOJbO[0
+R2
+R3
+w1733495276
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/RegFile.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/RegFile.v
+!i122 936
+L0 1 27
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/RegFile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/RegFile.v|
+!i113 1
+R6
+R7
+n@reg@file
+vSRAM
+R15
+!i10b 1
+!s100 dm]]G<CZ1;aB7WCgGheR10
+R1
+I[4B;KZ5LAR=h3aC8YP?=M3
+R2
+R3
+w1733495281
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/SRAM.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/SRAM.v
+!i122 937
+L0 1 55
+R4
+r1
+!s85 0
+31
+Z16 !s108 1733540308.000000
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/SRAM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/SRAM.v|
+!i113 1
+R6
+R7
+n@s@r@a@m
+vTop
+R15
+!i10b 1
+!s100 h6PJok?P@R[R42IdV5dWY1
+R1
+IZ;=PJZXWizgzIz5`BN^Fd0
+R2
+R3
+w1733540102
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v
+!i122 938
+L0 1 246
+R4
+r1
+!s85 0
+31
+R16
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v|
+!i113 1
+R6
+R7
+n@top
+vtop_tb
+DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+R15
+!i10b 1
+!s100 >:Z>zgC?G;TMV4iD3S06Z2
+R1
+I]ihkTJYhShTaJ2Nf[Am?k1
+R2
+S1
+R3
+w1733540148
+8D:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv
+FD:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv
+!i122 939
+L0 14 145
+R4
+r1
+!s85 0
+31
+R16
+!s107 D:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv|
+!i113 1
+o-work work -sv
+R7
