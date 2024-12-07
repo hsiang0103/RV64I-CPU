@@ -82,12 +82,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Reg_D
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_E.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_E.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/ALU.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Reg_E
+-- Compiling module ALU
 
 Top level modules:
-	Reg_E
+	ALU
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Mux.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Mux.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -96,12 +96,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Mux
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/ALU.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/ALU.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_E.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_E.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ALU
+-- Compiling module Reg_E
 
 Top level modules:
-	ALU
+	Reg_E
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/SRAM.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/SRAM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -110,12 +110,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	SRAM
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_W.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_W.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Controller.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Controller.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Reg_W
+-- Compiling module Controller
 
 Top level modules:
-	Reg_W
+	Controller
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/top_tb.sv {1 {vlog -work work -sv -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/top_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -124,19 +124,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	top_tb
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Controller.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Controller.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_W.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Reg_W.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Controller
+-- Compiling module Reg_W
 
 Top level modules:
-	Controller
-
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Mux3.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Mux3.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Mux3
-
-Top level modules:
-	Mux3
+	Reg_W
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/control_M.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/control_M.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -144,6 +137,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	control_M
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/Mux3.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/Mux3.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux3
+
+Top level modules:
+	Mux3
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu/src/RegFile.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu/src/RegFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

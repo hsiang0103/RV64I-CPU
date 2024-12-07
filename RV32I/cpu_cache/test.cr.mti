@@ -26,13 +26,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Imme_Ext
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/dcache.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/dcache.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module dcache
-
-Top level modules:
-	dcache
-
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Adder.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Adder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Adder

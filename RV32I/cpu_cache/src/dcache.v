@@ -76,7 +76,6 @@ module dcache (input wire clk,
     begin
         case(cs)
             IDLE:   ns  = ((rd || wr) && !hit_miss)? MISS : ((rd || wr) && hit_miss)? DONE : IDLE;
-            // MISS: ns = (wr)? DONE : ((counter == 7)? DONE : MISS);
             MISS:   ns  = DONE;
             DONE:   ns  = IDLE;
             default:ns  = IDLE;

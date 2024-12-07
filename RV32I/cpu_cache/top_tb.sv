@@ -9,22 +9,9 @@
   CPU.dm.mem[addr+1], \
   CPU.dm.mem[addr]}
 
-/*`define mem1_word(addr) \
-  {CPU.Dcache.mem1[addr+3], \
-  CPU.Dcache.mem1[addr+2], \
-  CPU.Dcache.mem1[addr+1], \
-  CPU.Dcache.mem1[addr]}
-
-`define mem2_word(addr) \
-  {CPU.Dcache.mem2[addr+3], \
-  CPU.Dcache.mem2[addr+2], \
-  CPU.Dcache.mem2[addr+1], \
-  CPU.Dcache.mem2[addr]}*/
-
 `define ANSWER_START 'h9000
 
 module top_tb;
-
   logic clk;
   logic rst;
   logic waiting;
@@ -40,12 +27,9 @@ module top_tb;
   CPU CPU (
     .clk(clk),
     .rst(rst)
-    // .waiting(waiting)
   );
 
   always #(`CYCLE/2) clk = ~clk;
-
-  // always #(`CYCLE*4) waiting = ~waiting;
 
   initial begin
     clk = 1; rst = 1;
@@ -54,7 +38,6 @@ module top_tb;
     // Get Path (main.hex / golden.hex)
     prog_path = "./test/prog1/main.hex";
     gold_path = "./test/prog1/golden.hex";
-
 
     // Load main.hex (Program & Preset data)
     handler = $fopen(prog_path, "r");
@@ -88,21 +71,8 @@ module top_tb;
     wait(CPU.t1.pc == 32'h0000001c);
     $display("\nDone\n");
 
-
     // Compare result with Golden Data
-    err = 0;/*
-    for (i = 0; i < num; i++)
-    begin
-      if (`mem_word(`ANSWER_START + i*4) != GOLDEN[i])
-      begin
-        $display("DM['h%4h] = %h, expect = %h", `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
-        err = err + 1;
-      end
-      else
-      begin
-        $display("DM['h%4h] = %h, pass", `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
-      end
-    end*/
+    err = 0;
 
     for (i = 0; i < num; i++)
     begin
