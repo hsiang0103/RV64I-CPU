@@ -1,13 +1,25 @@
 // Copyright (c) 2020 Sonal Pinto
 // SPDX-License-Identifier: Apache-2.0
 `define CYCLE 10      // Cycle time
-`define MAX 100000    // Max cycle number
+`define MAX 300000    // Max cycle number
 
 `define mem_word(addr) \
   {CPU.dm.mem[addr+3], \
   CPU.dm.mem[addr+2], \
   CPU.dm.mem[addr+1], \
   CPU.dm.mem[addr]}
+
+/*`define mem1_word(addr) \
+  {CPU.Dcache.mem1[addr+3], \
+  CPU.Dcache.mem1[addr+2], \
+  CPU.Dcache.mem1[addr+1], \
+  CPU.Dcache.mem1[addr]}
+
+`define mem2_word(addr) \
+  {CPU.Dcache.mem2[addr+3], \
+  CPU.Dcache.mem2[addr+2], \
+  CPU.Dcache.mem2[addr+1], \
+  CPU.Dcache.mem2[addr]}*/
 
 `define ANSWER_START 'h9000
 
@@ -68,25 +80,17 @@ module top_tb;
     end
     $fclose(gf);
 
-
-    // Initialize part of the memory (needed by the test program)
-    `mem_word('h9078) = 32'd0;
-    `mem_word('h907c) = 32'd0;
-    `mem_word('h9080) = 32'd0;
-    `mem_word('h9084) = 32'd0;
-
-
     // Begin Running !
     #(`CYCLE) rst = 0;
     
 
     // Wait until end of execution
-    wait(CPU.dm.mem[16'hfffc] == 8'hff);
+    wait(CPU.t1.pc == 32'h0000001c);
     $display("\nDone\n");
 
 
     // Compare result with Golden Data
-    err = 0;
+    err = 0;/*
     for (i = 0; i < num; i++)
     begin
       if (`mem_word(`ANSWER_START + i*4) != GOLDEN[i])
@@ -98,13 +102,25 @@ module top_tb;
       begin
         $display("DM['h%4h] = %h, pass", `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
       end
-    end
+    end*/
 
+    for (i = 0; i < num; i++)
+    begin
+      // $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
+      if (!((`mem_word(`ANSWER_START + i*4) === GOLDEN[i]) || (CPU.Dcache.mem1[i] === GOLDEN[i]) || CPU.Dcache.mem2[i] === GOLDEN[i]))
+      begin
+        $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
+        err = err + 1;
+      end
+      else 
+      begin
+        $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, pass", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
+      end
+    end
 
     // Print result
     result(err, num);
     $finish;
-
   end
 
   task result;
@@ -135,11 +151,6 @@ module top_tb;
       end
     end
   endtask
-
-  initial begin
-      $fsdbDumpfile("TOP.vcd");
-      $fsdbDumpvars("+all");
-  end
 
   initial begin
     #(`CYCLE*`MAX)

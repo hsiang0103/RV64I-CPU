@@ -1,17 +1,17 @@
 module Imme_Ext (input wire [31:0] inst,
                  output reg[31:0] imm_ext_out);
-    wire [4:0]opcode;
-    parameter R_type = 5'b01100;
-    parameter I_type = 5'b00100;
-    parameter load   = 5'b00000;
-    parameter JALR   = 5'b11001;
-    parameter S_type = 5'b01000;
-    parameter B_type = 5'b11000;
-    parameter JAL    = 5'b11011;
-    parameter LUI    = 5'b01101;
-    parameter auipc  = 5'b00101;
+    wire [6:0] opcode;
+    parameter R_type = 7'b0110011;
+    parameter I_type = 7'b0010011;
+    parameter load   = 7'b0000011;
+    parameter JALR   = 7'b1100111;
+    parameter S_type = 7'b0100011;
+    parameter B_type = 7'b1100011;
+    parameter JAL    = 7'b1101111;
+    parameter LUI    = 7'b0110111;
+    parameter auipc  = 7'b0010111;
     
-    assign opcode = inst[6:2];
+    assign opcode = inst[6:0];
     
     always @(inst[31:7] or opcode)
     begin

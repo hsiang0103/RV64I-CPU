@@ -1,4 +1,4 @@
-module Controller (input wire[4:0] opcode,
+module Controller (input wire[6:0] opcode,
                    input wire[2:0] func3,
                    input wire func7,
                    input wire[4:0] rd,
@@ -20,31 +20,33 @@ module Controller (input wire[4:0] opcode,
                    output reg W_wb_data_sel,
                    output reg W_wb_en,
                    output reg[3:0] M_dm_w_en,
-                   output wire [4:0] E_op,
+                   output wire [6:0] E_op,
                    output wire [2:0] E_f3,
                    output wire E_f7,
                    output wire [4:0] E_rd,
                    output wire [2:0] W_f3,
                    output wire [4:0] W_rd,
                    output reg stall,
-                   output wire waiting);
+                   output wire waiting,
+                   output wire read,
+                   output wire [3:0] write);
 
-    parameter R_type = 5'b01100;
-    parameter I_type = 5'b00100;
-    parameter LOAD   = 5'b00000;
-    parameter JALR   = 5'b11001;
-    parameter S_type = 5'b01000;
-    parameter B_type = 5'b11000;
-    parameter JAL    = 5'b11011;
-    parameter LUI    = 5'b01101;
-    parameter AUIPC  = 5'b00101;
+    parameter R_type = 7'b0110011;
+    parameter I_type = 7'b0010011;
+    parameter LOAD   = 7'b0000011;
+    parameter JALR   = 7'b1100111;
+    parameter S_type = 7'b0100011;
+    parameter B_type = 7'b1100011;
+    parameter JAL    = 7'b1101111;
+    parameter LUI    = 7'b0110111;
+    parameter AUIPC  = 7'b0010111;
     
     wire [4:0] E_rs1;
     wire [4:0] E_rs2;
-    wire [4:0] M_op;
+    wire [6:0] M_op;
     wire [2:0] M_f3;
     wire [4:0] M_rd;
-    wire [4:0] W_op;
+    wire [6:0] W_op;
     
     
     control_E CE(
@@ -91,8 +93,10 @@ module Controller (input wire[4:0] opcode,
     .waiting(waiting)
     );
     
-    //assign waiting = ((M_op == LOAD || M_dm_w_en));
-    assign waiting = 0;
+    assign waiting = ((M_op == LOAD || M_dm_w_en) && !data_ready);
+    assign read = (M_op == LOAD);
+    assign write = M_dm_w_en;
+    // assign waiting = 0;
     
     always @(opcode or rd or rs1 or rs2 or alu_out or E_rs1 or E_rs2 or E_rd or E_op or M_op or M_f3 or M_rd or W_op or W_f3 or W_rd)
     begin
@@ -103,14 +107,14 @@ module Controller (input wire[4:0] opcode,
         E_jb_op1_sel  = (E_op == JALR)? 1'b1 : 1'b0;
         W_wb_data_sel = (W_op == LOAD)? 1'b1 : 1'b0;
 
-        if (E_op >= 5'd0)
+        if (E_op >= 7'd0)
         begin
             casex(E_op)
                 B_type:
                 begin
                     next_pc_sel = alu_out;
                 end
-                5'b110x1:
+                7'b110x111:
                 begin
                     next_pc_sel = 1'b1;
                 end

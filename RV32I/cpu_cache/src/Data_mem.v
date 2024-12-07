@@ -1,4 +1,5 @@
 module Data_mem (input wire clk,
+                 input wire rst,
                  input wire rden,
                  input wire wren,
                  input wire [15:0] rdaddress,
@@ -7,7 +8,7 @@ module Data_mem (input wire clk,
                  output reg [31:0] read_data);
     
     reg [7:0] mem [0:65535];
-    
+    integer i;
     //read//
     always @(*)
     begin
@@ -20,7 +21,7 @@ module Data_mem (input wire clk,
         end
     end
     //write//
-    always @(posedge clk)
+    always @(posedge clk or posedge rst)
     begin
         if (wren)
         begin

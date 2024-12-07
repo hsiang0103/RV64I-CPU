@@ -1,4 +1,4 @@
-module ALU (input wire [4:0] opcode,
+module ALU (input wire [6:0] opcode,
             input wire [2:0] func3,
             input wire func7,
             input wire signed [31:0] operand1,
@@ -18,7 +18,7 @@ parameter ADD  = 3'b000;
 always @(*)
 begin
     casex (opcode)
-        5'b0x100:
+        7'b0x10011:
         case (func3)
             AND: alu_out  = operand1 & operand2;
             OR: alu_out   = operand1 | operand2;
@@ -29,7 +29,7 @@ begin
             SLTU: alu_out = ($signed(operand1) < $unsigned(operand2))? 32'b1 : 32'b0;
             ADD:
             begin
-                if (opcode == 5'b00100)
+                if (opcode == 7'b0010011)
                 begin
                     alu_out = operand1 + operand2;
                 end
@@ -40,11 +40,11 @@ begin
             end
             default: alu_out = 32'h0;
         endcase
-        5'b01101: alu_out = operand2;
-        5'b00101: alu_out = operand1 + operand2;
-        5'b0x000: alu_out = operand1 + operand2;
-        5'b110x1: alu_out = operand1 + 32'd4;
-        5'b11000:
+        7'b0110111: alu_out = operand2;
+        7'b0010111: alu_out = operand1 + operand2;
+        7'b0x00011: alu_out = operand1 + operand2;
+        7'b110x111: alu_out = operand1 + 32'd4;
+        7'b1100011:
         case(func3)
             3'b000: alu_out  = (operand1 == operand2)? 32'b1 : 32'b0;
             3'b001: alu_out  = (operand1 != operand2)? 32'b1 : 32'b0;

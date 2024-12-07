@@ -1,13 +1,15 @@
 module Top (input wire clk,
             input wire rst,
-            // input wire waiting,
             input wire [31:0] W_in_ld_data,
             input wire [31:0] D_in_inst,
+            input wire data_ready,
             output wire [3:0] F_im_w_en,
             output wire [3:0] M_dm_w_en,
             output wire [31:0] M_out_alu_out,
             output wire [31:0] M_out_rs2_data,
-            output wire [31:0] pc);
+            output wire [31:0] pc,
+            output wire read,
+            output wire [3:0] write);
     
     wire [31:0] D_pc;
     wire [31:0] E_pc;
@@ -36,7 +38,7 @@ module Top (input wire clk,
     wire [31:0] m2_out;
     wire [31:0] m7_out;
     wire [4:0] rd_index;
-    wire [4:0] opcode;
+    wire [6:0] opcode;
     wire [2:0] func3;
     wire       func7;
     wire       D_rs1_data_sel;
@@ -46,7 +48,7 @@ module Top (input wire clk,
     wire       E_jb_op1_sel;
     wire       E_alu_op1_sel;
     wire       E_alu_op2_sel;
-    wire [4:0] E_op;
+    wire [6:0] E_op;
     wire [4:0] E_rd;
     wire [2:0] E_f3;
     wire       E_f7;
@@ -57,6 +59,7 @@ module Top (input wire clk,
     wire       next_pc_sel;
     wire       stall;
     wire       waiting;
+
     Reg_PC procount(
     .clk(clk) ,
     .rst(rst) ,
@@ -96,7 +99,6 @@ module Top (input wire clk,
     .rst(rst),
     .alu_out(M_in_alu_out[0]),
     .next_pc_sel(next_pc_sel),
-    .waiting(waiting),
     .F_im_w_en(F_im_w_en),
     .D_rs1_data_sel(D_rs1_data_sel),
     .D_rs2_data_sel(D_rs2_data_sel),
@@ -114,7 +116,11 @@ module Top (input wire clk,
     .E_f7(E_f7),
     .W_f3(W_f3),
     .W_rd(W_rd),
-    .stall(stall)
+    .stall(stall),
+    .waiting(waiting),
+    .read(read),
+    .write(write),
+    .data_ready(data_ready)
     );
     RegFile regfile(
     .clk(clk),
