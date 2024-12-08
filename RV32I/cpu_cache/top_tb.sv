@@ -22,12 +22,31 @@ module top_tb;
   integer err;              // total number of errors compared to golden data
 
   integer i, handler;
+  integer read=0, read_hit=0, write=0, write_hit=0;
   string prog, prog_path, gold_path;
 
   CPU CPU (
     .clk(clk),
     .rst(rst)
   );
+
+  always @(posedge CPU.Dcache.rd)
+  begin
+    read++;
+    if(CPU.Dcache.hit_miss)
+    begin
+      read_hit++;
+    end
+  end
+
+  always @(posedge CPU.Dcache.wr)
+  begin
+    write++;
+    if(CPU.Dcache.hit_miss)
+    begin
+      write_hit++;
+    end
+  end
 
   always #(`CYCLE/2) clk = ~clk;
 
@@ -106,6 +125,10 @@ module top_tb;
         $display("**  Simulation PASS !!    **");
         $display("**                        **");
         $display("****************************");
+        $display("read           : %d",read);
+        $display("read hit       : %d",read_hit);
+        $display("write          : %d",write);
+        $display("write hit      : %d",write_hit);
       end
       else
       begin

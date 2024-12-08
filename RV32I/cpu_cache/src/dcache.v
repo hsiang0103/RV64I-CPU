@@ -47,7 +47,6 @@ module dcache (input wire clk,
     reg [31:0] _data2cpu;
     reg [31:0] _data2mem;
     reg [15:0] _m_wr_address;
-    reg [15:0] _m_rd_address;
     reg _mwren;
     reg [7:0] counter;
     wire [31:0] mask;

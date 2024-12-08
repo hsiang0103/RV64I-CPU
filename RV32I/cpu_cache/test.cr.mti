@@ -47,12 +47,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	RegFile
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/CPU.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/CPU.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/dcache.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/dcache.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CPU
+-- Compiling module dcache
 
 Top level modules:
-	CPU
+	dcache
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Imme_Ext.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Imme_Ext.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -312,12 +312,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	SRAM
-
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv {1 {vlog -work work -sv -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module top_tb
-
-Top level modules:
-	top_tb
 
 } {} {}}

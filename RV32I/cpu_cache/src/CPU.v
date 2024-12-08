@@ -78,6 +78,7 @@ module CPU (input wire clk,
     .wraddress(wr_addr),
     .rden(mrden),
     .wren(mwren),
-    .read_data(data_out)
+    .read_data(data_out),
+    .rst(rst)
     );
 endmodule
