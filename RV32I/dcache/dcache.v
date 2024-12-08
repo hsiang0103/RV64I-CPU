@@ -1,6 +1,7 @@
 `define TAG 15:10		// position of tag in address
 `define INDEX 9:2	    // position of index in address
 `define OFFSET 1:0		// position of offset in address
+`define MEMORY_READ_DELAY 10
 
 // 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
 // |---------------|----------------------|-----|
@@ -36,20 +37,22 @@ module dcache (input wire clk,
     reg [5:0]           tag2   [0:255];
     reg [31:0]          mem2   [0:255];
     
-    parameter IDLE = 0;
-    parameter MISS = 1;
-    parameter DONE = 2;
+    parameter IDLE    = 0;
+    parameter MISS    = 1;
+    parameter WAITMEM = 2;
+    parameter DONE    = 3;
     integer i;
     
     reg [1:0] cs, ns;
     reg [31:0] _data2cpu;
     reg [31:0] _data2mem;
-    reg [31:0] _m_wr_address;
-    reg [3:0]  counter;
+    reg [15:0] _m_wr_address;
+    reg [15:0] _m_rd_address;
     reg _mwren;
+    reg [7:0] counter;
     wire [31:0] mask;
     
-    assign mrden        = rd && !((valid1[address[`INDEX]] && (tag1[address[`INDEX]] == address[`TAG])) || (valid2[address[`INDEX]] && (tag2[address[`INDEX]] == address[`TAG])));
+    assign mrden        = (cs == WAITMEM && counter == `MEMORY_READ_DELAY);
     assign mwren        = _mwren;
     assign data2mem     = _data2mem;
     assign m_rd_address = address;
@@ -70,14 +73,15 @@ module dcache (input wire clk,
         end
     end
     
-    assign hit_miss = (cs == IDLE) && ((valid1[address[`INDEX]] && (tag1[address[`INDEX]] == address[`TAG])) || (valid2[address[`INDEX]] && (tag2[address[`INDEX]] == address[`TAG])));
+    assign hit_miss = (rd || wr) && (cs == IDLE) && ((valid1[address[`INDEX]] && (tag1[address[`INDEX]] == address[`TAG])) || (valid2[address[`INDEX]] && (tag2[address[`INDEX]] == address[`TAG])));
     
     always @(cs or rd or wr or hit_miss or counter)
     begin
         case(cs)
-            IDLE:   ns  = ((rd || wr) && !hit_miss)? MISS : ((rd || wr) && hit_miss)? DONE : IDLE;
-            // MISS: ns = (wr)? DONE : ((counter == 7)? DONE : MISS);
+            IDLE:   ns  = (rd || wr)? ((rd)? ((hit_miss)? (DONE) : (WAITMEM)) : ((hit_miss)? (DONE) : (MISS))) : (IDLE);
+            IDLE:   ns  = (rd)? ((hit_miss)? DONE : WAITMEM) : ((wr)? ((hit_miss)? DONE : MISS) : IDLE);
             MISS:   ns  = DONE;
+            WAITMEM: ns = (counter == `MEMORY_READ_DELAY)? MISS : WAITMEM;
             DONE:   ns  = IDLE;
             default:ns  = IDLE;
         endcase
@@ -112,7 +116,7 @@ module dcache (input wire clk,
                 IDLE:
                 begin
                     counter <= 0;
-                    if (hit_miss && (rd || wr))
+                    if (hit_miss)
                     begin
                         if (valid1[address[`INDEX]] && (tag1[address[`INDEX]] == address[`TAG]))
                         begin
@@ -154,7 +158,6 @@ module dcache (input wire clk,
                 MISS:
                 begin
                     // read miss, take data from memory
-                    counter <= counter + 1;
                     if (rd)
                     begin
                         _data2cpu <= data_in_mem;
@@ -163,6 +166,7 @@ module dcache (input wire clk,
                     begin
                         _data2cpu <= 0;
                     end
+                    
                     // check way 1
                     if (lru1[address[`INDEX]] == 0)
                     begin
@@ -220,10 +224,13 @@ module dcache (input wire clk,
                     begin
                     end
                 end
+                WAITMEM:
+                begin
+                    counter <= counter + 1;
+                end
                 DONE:
                 begin
                     _data2cpu <= 0;
-                    counter   <= 0;
                 end
             endcase
         end

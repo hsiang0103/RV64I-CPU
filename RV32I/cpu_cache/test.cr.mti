@@ -1,4 +1,32 @@
-D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v
+D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_W.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_W.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Reg_W
+
+Top level modules:
+	Reg_W
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Controller.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Controller.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Controller
+
+Top level modules:
+	Controller
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_M.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module control_M
+
+Top level modules:
+	control_M
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Mux3.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Mux3.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux3
+
+Top level modules:
+	Mux3
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/control_M.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/control_M.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module control_M
 
@@ -6,6 +34,13 @@ Top level modules:
 	control_M
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/RegFile.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/RegFile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/RegFile.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/RegFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module RegFile
 
@@ -33,26 +68,40 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Adder
 
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/CPU.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/CPU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Adder.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Data_mem.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Data_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Data_mem
+
+Top level modules:
+	Data_mem
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_PC.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_PC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Reg_PC
+
+Top level modules:
+	Reg_PC
+
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_M.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_M.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Reg_M
 
 Top level modules:
 	Reg_M
-
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Top
-
-Top level modules:
-	Top
-
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module JB_Unit
-
-Top level modules:
-	JB_Unit
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/SRAM.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/SRAM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -61,12 +110,47 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	SRAM
 
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/JB_Unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module JB_Unit
+
+Top level modules:
+	JB_Unit
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Top
+
+Top level modules:
+	Top
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_M.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_M.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Reg_M
+
+Top level modules:
+	Reg_M
+
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Controller.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Controller.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Controller
 
 Top level modules:
 	Controller
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/JB_Unit.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/JB_Unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module JB_Unit
+
+Top level modules:
+	JB_Unit
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Top.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Top
+
+Top level modules:
+	Top
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/LD_Filter.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/LD_Filter.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -75,19 +159,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	LD_Filter
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Mux3
-
-Top level modules:
-	Mux3
-
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_E.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_E.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module control_E
 
 Top level modules:
 	control_E
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux3.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux3
+
+Top level modules:
+	Mux3
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/decoder.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/decoder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -96,6 +180,20 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	decoder
 
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/control_E.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/control_E.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module control_E
+
+Top level modules:
+	control_E
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/LD_Filter.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/LD_Filter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module LD_Filter
+
+Top level modules:
+	LD_Filter
+
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_W.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/control_W.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module control_W
@@ -103,12 +201,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	control_W
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Data_mem.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Data_mem.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/decoder.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/decoder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Data_mem
+-- Compiling module decoder
 
 Top level modules:
-	Data_mem
+	decoder
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_PC.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -117,6 +215,20 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Reg_PC
 
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Data_mem.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Data_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Data_mem
+
+Top level modules:
+	Data_mem
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/control_W.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/control_W.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module control_W
+
+Top level modules:
+	control_W
+
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_D.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_D.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Reg_D
@@ -124,19 +236,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Reg_D
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/dcache.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/dcache.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Mux
+-- Compiling module dcache
 
 Top level modules:
-	Mux
+	dcache
 
-} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Imme_Ext.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Imme_Ext.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Reg_E
+-- Compiling module Imme_Ext
 
 Top level modules:
-	Reg_E
+	Imme_Ext
 
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/ALU.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -145,11 +257,67 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ALU
 
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_E.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Reg_E
+
+Top level modules:
+	Reg_E
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Mux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux
+
+Top level modules:
+	Mux
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_D.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_D.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Reg_D
+
+Top level modules:
+	Reg_D
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/ALU.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Mux.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Mux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux
+
+Top level modules:
+	Mux
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_E.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/Reg_E.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Reg_E
+
+Top level modules:
+	Reg_E
+
 } {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_W.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/src/Reg_W.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Reg_W
 
 Top level modules:
 	Reg_W
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/SRAM.v {1 {vlog -work work -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/SRAM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SRAM
+
+Top level modules:
+	SRAM
+
+} {} {}} D:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv {1 {vlog -work work -sv -stats=none D:/SystemC/piyan-cpu/RV32I/cpu_cache/top_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top_tb
+
+Top level modules:
+	top_tb
 
 } {} {}}

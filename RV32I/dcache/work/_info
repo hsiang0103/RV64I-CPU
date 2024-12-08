@@ -1,0 +1,81 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/SystemC/piyan-cpu/RV32I/cpu_cache
+vd_cache_test
+Z0 !s110 1733626201
+!i10b 1
+!s100 bfo6<Cj9PhFT533W]1?C^3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I:Ti?2kcgoe8e7RzQCFGI53
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dD:/SystemC/piyan-cpu/RV32I/dcache
+w1733579665
+8D:/SystemC/piyan-cpu/RV32I/dcache/dcache_tb.v
+FD:/SystemC/piyan-cpu/RV32I/dcache/dcache_tb.v
+!i122 47
+L0 2 176
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1733626201.000000
+!s107 D:/SystemC/piyan-cpu/RV32I/dcache/dcache_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/dcache/dcache_tb.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vdcache
+R0
+!i10b 1
+!s100 IXcW8dUBEI4[>FW>cm^MU2
+R1
+IeZY@JQlPNE]2U:kNzzJ7_3
+R2
+R3
+w1733626200
+8D:/SystemC/piyan-cpu/RV32I/dcache/dcache.v
+FD:/SystemC/piyan-cpu/RV32I/dcache/dcache.v
+!i122 46
+L0 9 218
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/SystemC/piyan-cpu/RV32I/dcache/dcache.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/dcache/dcache.v|
+!i113 1
+R6
+R7
+vSRAM
+R0
+!i10b 1
+!s100 ZNz>9=H77G0aXibS91J0W3
+R1
+IPVP3X2lk1Ec1OMNIiFzmZ0
+R2
+R3
+w1733625733
+8D:/SystemC/piyan-cpu/RV32I/dcache/SRAM.v
+FD:/SystemC/piyan-cpu/RV32I/dcache/SRAM.v
+!i122 48
+L0 1 33
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/SystemC/piyan-cpu/RV32I/dcache/SRAM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SystemC/piyan-cpu/RV32I/dcache/SRAM.v|
+!i113 1
+R6
+R7
+n@s@r@a@m

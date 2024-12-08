@@ -124,6 +124,7 @@ module Top (input wire clk,
     );
     RegFile regfile(
     .clk(clk),
+    .rst(rst),
     .wb_en(W_wb_en),
     .wb_data(wb_data),
     .rd_index(W_rd),
