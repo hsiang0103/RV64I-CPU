@@ -19,7 +19,7 @@ module Controller (input wire[6:0] opcode,
                    output reg E_alu_op2_sel,
                    output reg W_wb_data_sel,
                    output reg W_wb_en,
-                   output reg[3:0] M_dm_w_en,
+                   output wire [3:0] M_dm_w_en,
                    output wire [6:0] E_op,
                    output wire [2:0] E_f3,
                    output wire E_f7,
@@ -96,6 +96,7 @@ module Controller (input wire[6:0] opcode,
     assign waiting = ((M_op == LOAD || M_dm_w_en) && !data_ready);
     assign read = (M_op == LOAD);
     assign write = M_dm_w_en;
+    assign M_dm_w_en = (M_op == S_type)? ((M_f3 == 3'b000)? (4'b001) : ((M_f3 == 3'b001)? (4'b0011) : (4'b1111))) : (4'b0);
     // assign waiting = 0;
     
     always @(opcode or rd or rs1 or rs2 or alu_out or E_rs1 or E_rs2 or E_rd or E_op or M_op or M_f3 or M_rd or W_op or W_f3 or W_rd)
@@ -130,7 +131,7 @@ module Controller (input wire[6:0] opcode,
         end
 
         //M_dm_w_en//
-        if (M_op == S_type)
+        /*if (M_op == S_type)
         begin
             case (M_f3)
                 3'b000:
@@ -154,7 +155,7 @@ module Controller (input wire[6:0] opcode,
         else
         begin
             M_dm_w_en = 4'b0000;
-        end
+        end*/
         
         //D_rs1_data_sel//
         if ((opcode != LUI && opcode != AUIPC && opcode != JAL) && (W_op != B_type && W_op != S_type))

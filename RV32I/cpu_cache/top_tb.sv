@@ -1,5 +1,6 @@
 // Copyright (c) 2020 Sonal Pinto
 // SPDX-License-Identifier: Apache-2.0
+`timescale 100ps/100ps
 `define CYCLE 10      // Cycle time
 `define MAX 300000    // Max cycle number
 
@@ -30,19 +31,29 @@ module top_tb;
     .rst(rst)
   );
 
-  always @(posedge CPU.Dcache.rd)
+  always @(posedge CPU.Dcache.data_ready)
   begin
-    read++;
-    if(CPU.Dcache.hit_miss)
+    if(CPU.Dcache.rd)
     begin
-      read_hit++;
+      read++;
     end
   end
 
-  always @(posedge CPU.Dcache.wr)
+  always @(posedge CPU.Dcache.data_ready)
   begin
-    write++;
-    if(CPU.Dcache.hit_miss)
+    if(CPU.Dcache.wr)
+    begin
+      write++;
+    end
+  end
+
+  always @(posedge CPU.Dcache.hit_miss)
+  begin
+    if(CPU.Dcache.rd)
+    begin
+      read_hit++;
+    end
+    if(CPU.Dcache.wr)
     begin
       write_hit++;
     end
@@ -93,19 +104,35 @@ module top_tb;
     // Compare result with Golden Data
     err = 0;
 
+    //for write back cache//
     for (i = 0; i < num; i++)
     begin
       // $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
       if (!((`mem_word(`ANSWER_START + i*4) === GOLDEN[i]) || (CPU.Dcache.mem1[i] === GOLDEN[i]) || CPU.Dcache.mem2[i] === GOLDEN[i]))
       begin
-        $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
+        $display("d$m1['h%4h] = %h dirty1 = %d, d$m2['h%4h] = %h dirty2 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
         err = err + 1;
       end
       else 
       begin
-        $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, pass", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
+        $display("d$m1['h%4h] = %h dirty1 = %d, d$m2['h%4h] = %h dirty2 = %d, M['h%4h] = %h, pass", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
       end
     end
+
+    //for write through cache//
+    /*for (i = 0; i < num; i++)
+    begin
+      // $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
+      if (!((`mem_word(`ANSWER_START + i*4) === GOLDEN[i]) || (CPU.Dcache.mem[i] === GOLDEN[i])))
+      begin
+        $display("dm['h%4h] = %h, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
+        err = err + 1;
+      end
+      else 
+      begin
+        $display("dm['h%4h] = %h, M['h%4h] = %h, pass", i,CPU.Dcache.mem[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
+      end
+    end*/
 
     // Print result
     result(err, num);

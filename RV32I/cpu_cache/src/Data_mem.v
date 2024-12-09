@@ -10,7 +10,7 @@ module Data_mem (input wire clk,
     reg [7:0] mem [0:65535];
     integer i;
     //read//
-    always @(*)
+    always @(rden or mem or rdaddress)
     begin
         if (rden)
         begin
