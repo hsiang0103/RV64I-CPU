@@ -1,5 +1,5 @@
-`define TAG 15:10		// position of tag in address
-`define INDEX 9:2	    // position of index in address
+`define TAG 15:7		// position of tag in address
+`define INDEX 6:2	    // position of index in address
 `define OFFSET 1:0		// position of offset in address
 `define MEMORY_READ_DELAY 10
 
@@ -24,18 +24,18 @@ module dcache (input wire clk,
                output wire mwren);              // write enable, 1 for writing to memory
     
     // WAY 1 cache data
-    reg					valid1 [0:255];
-    reg					dirty1 [0:255];
-    reg					lru1   [0:255];
-    reg [5:0]	        tag1   [0:255];
-    reg [31:0]	        mem1   [0:255];
+    reg					valid1 [0:31];
+    reg					dirty1 [0:31];
+    reg					lru1   [0:31];
+    reg [8:0]	        tag1   [0:31];
+    reg [31:0]	        mem1   [0:31];
     
     // WAY 2 cache data
-    reg					valid2 [0:255];
-    reg					dirty2 [0:255];
-    reg					lru2   [0:255];
-    reg [5:0]           tag2   [0:255];
-    reg [31:0]          mem2   [0:255];
+    reg					valid2 [0:31];
+    reg					dirty2 [0:31];
+    reg					lru2   [0:31];
+    reg [8:0]           tag2   [0:31];
+    reg [31:0]          mem2   [0:31];
     
     parameter IDLE    = 0;
     parameter MISS    = 1;
@@ -90,7 +90,7 @@ module dcache (input wire clk,
     begin
         if (rst)
         begin
-            for(i = 0; i < 256; i = i + 1)
+            for(i = 0; i < 32; i = i + 1)
             begin
                 valid1[i] <= 0;
                 valid2[i] <= 0;
@@ -172,7 +172,7 @@ module dcache (input wire clk,
                         // if dirty, write back to memory
                         if (dirty1[address[`INDEX]] == 1)
                         begin
-                            _m_wr_address <= {tag1[address[`INDEX]],address[`INDEX]};
+                            _m_wr_address <= {tag1[address[`INDEX]],address[`INDEX],2'b0};
                             _mwren        <= 1;
                             _data2mem     <= mem1[address[`INDEX]];
                         end
@@ -199,9 +199,9 @@ module dcache (input wire clk,
                         // if dirty, write back to memory
                         if (dirty2[address[`INDEX]] == 1)
                         begin
-                            _m_wr_address <= {tag1[address[`INDEX]],address[`INDEX]};
+                            _m_wr_address <= {tag2[address[`INDEX]],address[`INDEX],2'b0};
                             _mwren        <= 1;
-                            _data2mem     <= mem1[address[`INDEX]];
+                            _data2mem     <= mem2[address[`INDEX]];
                         end
                         // write allocate
                         tag2[address[`INDEX]]   <= address[`TAG];
