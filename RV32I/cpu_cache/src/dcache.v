@@ -229,6 +229,7 @@ module dcache (input wire clk,
                 end
                 DONE:
                 begin
+                    _mwren    <= 0;
                     _data2cpu <= 0;
                 end
             endcase
