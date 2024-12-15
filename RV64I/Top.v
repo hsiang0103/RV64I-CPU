@@ -228,7 +228,7 @@ module Top (
     );
 
     wire [63:0] data_out, data2mem;
-    wire wren, mwren;
+    wire [7:0] mwren;
     wire [31:0] rd_addr, wr_addr;
     // cache 
     dcache Dcache (
@@ -258,4 +258,10 @@ module Top (
         .read_data(data_out),//
         .rst(rst)//
     );
+
+    // debug
+    integer cycle_counter = 0;
+    always @(current_pc) begin
+        cycle_counter = cycle_counter + 1;
+    end
 endmodule

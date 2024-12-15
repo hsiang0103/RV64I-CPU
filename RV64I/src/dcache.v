@@ -21,7 +21,7 @@ module dcache (input wire clk,
                output wire [31:0] m_rd_address, // memory read address
                output wire [31:0] m_wr_address, // memory write address
                output wire mrden,               // read enable, 1 for reading from memory
-               output wire mwren);              // write enable, 1 for writing to memory
+               output wire [7:0] mwren);              // write enable, 1 for writing to memory
     
     // WAY 1 cache data
     reg					valid1 [0:31];
@@ -47,7 +47,7 @@ module dcache (input wire clk,
     reg [63:0] _data2cpu;
     reg [63:0] _data2mem;
     reg [31:0] _m_wr_address;
-    reg _mwren;
+    reg [7:0] _mwren;
     reg [7:0] counter;
     wire [63:0] mask;
     
@@ -177,7 +177,7 @@ module dcache (input wire clk,
                         if (dirty1[address[`INDEX]] == 1)
                         begin
                             _m_wr_address <= {32'b0, tag1[address[`INDEX]],address[`INDEX],2'b0};
-                            _mwren        <= 1;
+                            _mwren        <= 8'b00001111;
                             _data2mem     <= mem1[address[`INDEX]];
                         end
                         // write allocate
@@ -204,7 +204,7 @@ module dcache (input wire clk,
                         if (dirty2[address[`INDEX]] == 1)
                         begin
                             _m_wr_address <= {32'b0, tag2[address[`INDEX]],address[`INDEX],2'b0};
-                            _mwren        <= 1;
+                            _mwren        <= 8'b00001111;
                             _data2mem     <= mem2[address[`INDEX]];
                         end
                         // write allocate

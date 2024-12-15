@@ -1,7 +1,7 @@
 module Data_mem (input wire clk,
                  input wire rst,
                  input wire rden,
-                 input wire wren,
+                 input wire [7:0] wren,
                  input wire [31:0] rdaddress,
                  input wire [31:0] wraddress,
                  input wire [63:0] write_data,
@@ -27,8 +27,8 @@ module Data_mem (input wire clk,
     //write//
     always @(posedge clk or posedge rst)
     begin
-        if (wren)
-        begin
+        case(wren)
+        8'b11111111: begin
             mem[wraddress]   <= write_data[7:0];
             mem[wraddress+1] <= write_data[15:8];
             mem[wraddress+2] <= write_data[23:16];
@@ -38,5 +38,29 @@ module Data_mem (input wire clk,
             mem[wraddress+6] <= write_data[55:48];
             mem[wraddress+7] <= write_data[63:56];
         end
+        8'b00001111: begin
+            mem[wraddress]   <= write_data[7:0];
+            mem[wraddress+1] <= write_data[15:8];
+            mem[wraddress+2] <= write_data[23:16];
+            mem[wraddress+3] <= write_data[31:24];
+        end
+        8'b00000011: begin
+            mem[wraddress]   <= write_data[7:0];
+            mem[wraddress+1] <= write_data[15:8];
+        end
+        8'b00000001: begin
+            mem[wraddress]   <= write_data[7:0];
+        end
+        default: begin
+            mem[wraddress]   <= mem[wraddress];  
+            mem[wraddress+1] <= mem[wraddress+1];
+            mem[wraddress+2] <= mem[wraddress+2];
+            mem[wraddress+3] <= mem[wraddress+3];
+            mem[wraddress+4] <= mem[wraddress+4];
+            mem[wraddress+5] <= mem[wraddress+5];
+            mem[wraddress+6] <= mem[wraddress+6];
+            mem[wraddress+7] <= mem[wraddress+7];
+        end
+        endcase
     end
 endmodule
