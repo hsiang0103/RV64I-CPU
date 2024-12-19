@@ -19,6 +19,7 @@ module Top (
     input rst
 );
     wire [63:0] current_pc, current_pc_D, current_pc_E, inst_D;
+    wire [31:0] inst_D;
     wire [63:0] read_data, immediate, wb_data, sext_imm_E;
     wire [63:0] rs1, rs2, rs1_data_D, rs2_data_D, rs1_data_E, rs2_data_E,  rs2_data_M;
     wire [63:0] alu_op1, alu_op2, jb_op1, jb_pc, pc_plus4, next_pc, alu_out_E, alu_out_M, alu_out_W, ld_data, ld_data_W, ld_data_f;
@@ -43,7 +44,7 @@ module Top (
     SRAM im(
         .clk(clk), 
         .w_en(F_im_w_en), 
-        .address(current_pc[31:0]), 
+        .address(current_pc), 
         .write_data(64'd0), 
         .read_data(read_data)
     );
@@ -51,7 +52,7 @@ module Top (
         .clk(clk),
         .rst(rst),
         .current_pc(current_pc),
-        .inst(read_data),
+        .inst(read_data[31:0]),
         .stall(stall),
         .jb(next_pc_sel),
         .current_pc_D(current_pc_D),
