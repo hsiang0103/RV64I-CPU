@@ -64,13 +64,6 @@ module top_tb;
     $readmemh(prog_path, top.im.mem);
     $readmemh(prog_path, top.dm.mem);
 
-    // Load Golden Data
-    gf = $fopen(gold_path, "r");
-    if (handler == 0) begin
-      $display("\n\n\nError !!! No found \"%s\"\n\n\n", gold_path);
-      $finish;
-    end
-
     num = 0;
     while (!$feof(gf)) begin
       void'($fscanf(gf, "%h\n", GOLDEN[num]));
@@ -104,10 +97,6 @@ module top_tb;
       end else begin
         $display("%s | Error %h", filename, top.reg_file.registers[3]);
         err = err + 1;
-      end
-      else 
-      begin
-        $display("d$m1['h%4h] = %h dirty1 = %d, d$m2['h%4h] = %h dirty2 = %d, M['h%4h] = %h, pass", i%32,top.Dcache.mem1[i%32],top.Dcache.dirty1[i%32] ,i%32,top.Dcache.mem2[i%32],top.Dcache.dirty2[i%32], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
       end
     end
 

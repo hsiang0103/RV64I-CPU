@@ -1,0 +1,17 @@
+/home/summer/Desktop/piyan-cpu/RV64I/Top.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/ALU.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Controller.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Data_mem.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Decoder.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Imm_Ext.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/JB_Unit.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/LD_Filter.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Reg_D.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Reg_E.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Reg_File.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Reg_M.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Reg_PC.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/Reg_W.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/SRAM.v
+/home/summer/Desktop/piyan-cpu/RV64I/src/dcache.v
+/home/summer/Desktop/piyan-cpu/RV64I/top_tb.sv
