@@ -961,3 +961,805 @@ wvScrollUp -win $_nWave1 1
 wvScrollDown -win $_nWave1 0
 wvScrollDown -win $_nWave1 0
 wvScrollDown -win $_nWave1 0
+wvZoomAll -win $_nWave1
+wvZoom -win $_nWave1 0.000000 155276.030748
+wvSetCursor -win $_nWave1 52192.711942 -snap {("G1" 9)}
+wvZoom -win $_nWave1 41233.327522 55447.974642
+wvSetCursor -win $_nWave1 49468.088152 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 50481.291511 -snap {("G1" 9)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/top_tb"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/dm"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/dm"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/alu"
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvGetSignalClose -win $_nWave1
+wvZoomIn -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/top_tb"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/dm"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/alu"
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvGetSignalClose -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/top_tb"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/alu"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/dm"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/alu"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/reg_pc"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/imm_ext"
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvGetSignalClose -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/top_tb"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/alu"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/dm"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/imm_ext"
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+{/top_tb/top/imm_ext/inst\[31:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+{/top_tb/top/imm_ext/inst\[31:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvGetSignalClose -win $_nWave1
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 0)}
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/top_tb"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/alu"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/dm"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/imm_ext"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/imm_ext"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/decoder"
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+{/top_tb/top/decoder/dc_out_func3\[2:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+{/top_tb/top/decoder/dc_out_func3\[2:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvGetSignalClose -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/top_tb"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/alu"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/dm"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/imm_ext"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/decoder"
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+{/top_tb/top/decoder/dc_out_func3\[2:0\]} \
+{/top_tb/top/decoder/dc_out_opcode\[4:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+{/top_tb/top/decoder/dc_out_func3\[2:0\]} \
+{/top_tb/top/decoder/dc_out_opcode\[4:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSetRadix -win $_nWave1 -format Bin
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomAll -win $_nWave1
+wvScrollUp -win $_nWave1 10
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSetCursor -win $_nWave1 62611.177498 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 62835.269043 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 60504.716981 -snap {("G1" 9)}
+wvSetCursor -win $_nWave1 62387.085954 -snap {("G1" 5)}
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSetCursor -win $_nWave1 63462.725367 -snap {("G1" 35)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomAll -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvZoom -win $_nWave1 0.000000 804612.159329
+wvSetCursor -win $_nWave1 454316.299607 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 462188.116680 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 469497.661104 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 476244.932880 -snap {("G1" 5)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 22382.334032 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 474575.426275 -snap {("G1" 5)}
+wvResizeWindow -win $_nWave1 -1 27 1835 917
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top"
+wvGetSignalSetScope -win $_nWave1 "/top_tb/top/reg_file"
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/top_tb/top/reg_file/registers\[0:31\]} \
+{/top_tb/top/reg_file/registers\[0\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[1\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[2\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[3\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[4\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[5\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[6\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[7\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[8\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[9\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[10\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[11\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[12\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[13\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[14\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[15\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[16\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[17\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[18\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[19\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[20\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[21\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[22\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[23\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[24\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[25\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[26\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[27\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[28\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[29\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[30\]\[63:0\]} \
+{/top_tb/top/reg_file/registers\[31\]\[63:0\]} \
+{/top_tb/top/dm/mem\[0:65535\]} \
+{/top_tb/top/current_pc\[63:0\]} \
+{/top_tb/top/dm/rdaddress\[31:0\]} \
+{/top_tb/top/dm/rden} \
+{/top_tb/top/dm/wraddress\[31:0\]} \
+{/top_tb/top/dm/wren\[7:0\]} \
+{/top_tb/top/dm/write_data\[63:0\]} \
+{/top_tb/top/alu/alu_out\[63:0\]} \
+{/top_tb/top/alu/alu_out_32bits\[31:0\]} \
+{/top_tb/top/alu/operand1\[63:0\]} \
+{/top_tb/top/alu/operand2\[63:0\]} \
+{/top_tb/top/imm_ext/imm_ext_out\[64:0\]} \
+{/top_tb/top/decoder/dc_out_func3\[2:0\]} \
+{/top_tb/top/decoder/dc_out_opcode\[4:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvGetSignalClose -win $_nWave1
+wvExit

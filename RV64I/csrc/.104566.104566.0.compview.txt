@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1734763682.384943524, "rt":0.40, "ut":0.23, "st":0.16}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1734763681.584218572}
+{"VCS_COMP_START_TIME": 1734763681.584218572}
+{"VCS_COMP_END_TIME": 1734763682.906454656}
+{"VCS_USER_OPTIONS": "-full64 top_tb.sv -sverilog -full64 -R -debug_access+all +v2k -l vcs.log +define+FSDB +PROG=prog1"}
+{"vcs1": {"peak_mem": 336584}}

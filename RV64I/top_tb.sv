@@ -15,8 +15,6 @@
   top.dm.mem[addr+1], \
   top.dm.mem[addr]}
 
-`define ANSWER_START 'h9000
-
 module top_tb;
   logic clk;
   logic rst;
@@ -56,18 +54,18 @@ module top_tb;
     #(`CYCLE) rst = 0;
 
     // Wait until end of execution
-    wait(top.current_pc == 64'h00000100);
+    wait(top.current_pc == 64'h0000001c);
     $display("\nDone\n");
 
     err = 0;
     num = 1;
     //for write back cache//
     for (i = 0; i < num; i++) begin
-      if (!(`mem_word(`ANSWER_START + i*8) === 64'd0)) begin
-        $display("M['h%4h] = %h", `ANSWER_START + i*8, `mem_word(`ANSWER_START + i*8));
-        err = err + 1;
+      if (top.reg_file.registers[3] === 64'd0) begin
+        $display("ADD | Pass");
       end else begin
-        $display("M['h%4h] = %h, pass", `ANSWER_START + i*8, `mem_word(`ANSWER_START + i*8));
+        $display("ADD | Error %h", top.reg_file.registers[3]);
+        err = err + 1;
       end
     end
     result(err, num);

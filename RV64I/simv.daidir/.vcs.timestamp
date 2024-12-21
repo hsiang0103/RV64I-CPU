@@ -129,13 +129,13 @@ ARMLMD_LICENSE_FILE=/home/summer/ARM/lic/armlmd.lic
 1734586932 ./src/LD_Filter.v
 1734586932 ./src/Reg_PC.v
 1734586932 ./src/JB_Unit.v
-1734586932 ./src/Imm_Ext.v
+1734760836 ./src/Imm_Ext.v
 1734586932 ./src/Decoder.v
 1734586932 ./src/ALU.v
 1734586932 ./src/Reg_File.v
 1734586932 ./src/SRAM.v
 1734706299 ./Top.v
-1734719637 top_tb.sv
+1734763689 top_tb.sv
 1669114307 /home/summer/Synopsys/verdi/T-2022.06-SP2/share/PLI/VCS/LINUX64/verdi.tab
 1669781155 /home/summer/Synopsys/vcs/T-2022.06-SP2/linux64/lib/vcsdp_lite.tab
 4
@@ -143,5 +143,5 @@ ARMLMD_LICENSE_FILE=/home/summer/ARM/lic/armlmd.lic
 1669782209 /home/summer/Synopsys/vcs/T-2022.06-SP2/linux64/lib/liberrorinf.so
 1669782120 /home/summer/Synopsys/vcs/T-2022.06-SP2/linux64/lib/libsnpsmalloc.so
 1669782200 /home/summer/Synopsys/vcs/T-2022.06-SP2/linux64/lib/libvfs.so
-1734719642 simv.daidir
+1734763693 simv.daidir
 -1 partitionlib
