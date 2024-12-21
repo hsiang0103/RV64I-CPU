@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module d_cache_test();
+module i_cache_test();
     reg clk;
     reg rst;
     
@@ -18,7 +18,7 @@ module d_cache_test();
     wire        i_cache_hit_miss;
     wire [31:0] i_cache_q;
     
-    dcache CACHE (
+    icache CACHE (
     .clk(clk),
     .rst(rst),
     .address(i_cache_addr),

@@ -54,9 +54,9 @@ module dcache (input wire clk,
     assign mrden        = (cs == WAITMEM && counter == `MEMORY_READ_DELAY);
     assign mwren        = _mwren;
     assign data2mem     = _data2mem;
-    assign m_rd_address = address;
-    assign m_wr_address = _m_wr_address;
     assign data2cpu     = _data2cpu;
+    assign m_wr_address = _m_wr_address;
+    assign m_rd_address = address;
     assign data_ready   = (cs == DONE);
     assign mask         = (wr == 4'b1111)? 32'hFFFFFFFF : (wr == 4'b0011)? 32'h0000FFFF : (wr == 4'b0001)? 32'h000000FF : 32'b0;
     

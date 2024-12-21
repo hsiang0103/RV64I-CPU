@@ -18,7 +18,7 @@ module Top (
     input clk,
     input rst
 );
-    wire [63:0] current_pc, current_pc_D, current_pc_E, inst_D;
+    wire [63:0] current_pc, current_pc_D, current_pc_E;
     wire [31:0] inst_D;
     wire [63:0] read_data, immediate, wb_data, sext_imm_E;
     wire [63:0] rs1, rs2, rs1_data_D, rs2_data_D, rs1_data_E, rs2_data_E,  rs2_data_M;
@@ -165,15 +165,6 @@ module Top (
         .rs2_data_M(rs2_data_M),
         .waiting(waiting)
     );
-    /*
-    SRAM dm(
-        .clk(clk),
-        .w_en(M_dm_w_en),
-        .address(alu_out_M[31:0]),
-        .write_data(rs2_data_M),
-        .read_data(ld_data)
-    );
-    */
     
     Reg_W reg_W(
         .clk(clk),
@@ -230,12 +221,12 @@ module Top (
 
     wire [63:0] data_out, data2mem;
     wire [7:0] mwren;
-    wire [31:0] rd_addr, wr_addr;
+    wire [15:0] rd_addr, wr_addr;
     // cache 
     dcache Dcache (
         .clk(clk),//
         .rst(rst),//
-        .address(alu_out_M[31:0]),//
+        .address(alu_out_M[15:0]),//
         .data_in_cpu(rs2_data_M),//
         .data_in_mem(data_out),//
         .rd(read),//

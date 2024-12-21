@@ -41,16 +41,6 @@ module CPU (input wire clk,
     .write_data(32'b0),
     .read_data(D_in_inst)
     );
-    
-    /*
-    SRAM dm(
-    .clk(clk),
-    .w_en(M_dm_w_en),
-    .address(M_out_alu_out[15:0]),
-    .write_data(M_out_rs2_data),
-    .read_data(W_in_ld_data)
-    );
-    */
 
     
     dcache Dcache (
