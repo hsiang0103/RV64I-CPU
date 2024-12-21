@@ -21,7 +21,7 @@ module top_tb;
   integer num;              // total golden data
   integer err;              // total number of errors compared to golden data
   integer i, handler;
-  string prog, prog_path;
+  string prog, prog_path, filename;
 
   Top top (
     .clk(clk),
@@ -33,11 +33,15 @@ module top_tb;
   initial begin
     clk = 0; rst = 1;
 
+    // // Get Path (main.hex / golden.hex)
+    // if($value$plusargs("PROG=%s", prog)) begin
+    //   prog_path = $sformatf("./test/%s/main.hex", prog);
+    // end else begin
+    //   prog_path = "./test/prog0/main.hex";
+    // end
     // Get Path (main.hex / golden.hex)
-    if($value$plusargs("PROG=%s", prog)) begin
-      prog_path = $sformatf("./test/%s/main.hex", prog);
-    end else begin
-      prog_path = "./test/prog0/main.hex";
+    if($value$plusargs("file=%s", filename)) begin
+      prog_path = $sformatf("./test/prog1/%s.hex", filename);
     end
 
     // Load main.hex (Program & Preset data)
@@ -62,9 +66,9 @@ module top_tb;
     //for write back cache//
     for (i = 0; i < num; i++) begin
       if (top.reg_file.registers[3] === 64'd0) begin
-        $display("ADD | Pass");
+        $display("%s | Pass", filename);
       end else begin
-        $display("ADD | Error %h", top.reg_file.registers[3]);
+        $display("%s | Error %h", filename, top.reg_file.registers[3]);
         err = err + 1;
       end
     end
@@ -94,9 +98,7 @@ module top_tb;
         $display("    **                        **     ⠹⣿⣿⣿⣿⡿⣠⠶⣿⣷⡜⡏⣿⣶⠶⣶⢾⢿⢇⣼⣿⣿⣿⣿⣿⣿⣿⣿⠏⠊⠀⠀⠀⣾⠇");
         $display("    ****************************      ⠈⠻⣿⡿⣼⡿⣿⣶⣯⠃⡎⠩⠰⣛⠿⣷⡍⣼⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⢀⠋ ");
         $display("                                      ⠈⠃⠿⠿⠾⠝⠿⠰⠑⠀⠿⠿⠿⠶⠿⠼⠿⠿⠿⠿⠿⠟⠉⠀⠀⠀        ");
-      end
-      else
-      begin
+      end else begin
         $display("                                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⠶⠟⠛⠉⠁⠉⠛⠃⠀⠈⣿⠻⠷⠶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         $display("                                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠈⠙⢿⣦⣄⣀⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         $display("                                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠾⠋⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⡉⢹⣿⣿⣿⣷⣶⣶⣤⠀⠀⠀⠀⠀⠀⠀⠀");

@@ -1,5 +1,5 @@
 psSimBaseName                      	simv
-psLogFileName                      	vcs.log
+psLogFileName                      	NULL
 pDaiDir                            	/home/summer/Desktop/piyan-cpu/RV64I/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
