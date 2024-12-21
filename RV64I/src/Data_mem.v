@@ -2,8 +2,13 @@ module Data_mem (input wire clk,
                  input wire rst,
                  input wire rden,
                  input wire [7:0] wren,
+<<<<<<< HEAD
                  input wire [15:0] rdaddress,
                  input wire [15:0] wraddress,
+=======
+                 input wire [31:0] rdaddress,
+                 input wire [31:0] wraddress,
+>>>>>>> 296d06dfcf9f0ca3c8ba8ef7898496458f928f96
                  input wire [63:0] write_data,
                  output reg [63:0] read_data);
     

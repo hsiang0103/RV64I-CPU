@@ -110,12 +110,12 @@ module top_tb;
       // $display("dm1['h%4h] = %h dirty1 = %d, dm2['h%4h] = %h dirty1 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
       if (!((`mem_word(`ANSWER_START + i*4) === GOLDEN[i]) || (CPU.Dcache.mem1[i%32] === GOLDEN[i]) || CPU.Dcache.mem2[i%32] === GOLDEN[i]))
       begin
-        $display("d$m1['h%4h] = %h dirty1 = %d, d$m2['h%4h] = %h dirty2 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
+        $display("d$m1['h%4h] = %h dirty1 = %d, d$m2['h%4h] = %h dirty2 = %d, M['h%4h] = %h, expect = %h", i,CPU.Dcache.mem1[i%32],CPU.Dcache.dirty1[i%32] ,i,CPU.Dcache.mem2[i%32],CPU.Dcache.dirty2[i%32], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4), GOLDEN[i]);
         err = err + 1;
       end
       else 
       begin
-        $display("d$m1['h%4h] = %h dirty1 = %d, d$m2['h%4h] = %h dirty2 = %d, M['h%4h] = %h, pass", i,CPU.Dcache.mem1[i],CPU.Dcache.dirty1[i] ,i,CPU.Dcache.mem2[i],CPU.Dcache.dirty2[i], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
+        $display("d$m1['h%4h] = %h dirty1 = %d, d$m2['h%4h] = %h dirty2 = %d, M['h%4h] = %h, pass", i,CPU.Dcache.mem1[i%32],CPU.Dcache.dirty1[i%32] ,i,CPU.Dcache.mem2[i%32],CPU.Dcache.dirty2[i%32], `ANSWER_START + i*4, `mem_word(`ANSWER_START + i*4));
       end
     end
 
