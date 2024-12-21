@@ -10,27 +10,18 @@ module Reg_File (
     output [63:0] rs2_data_out
 );
     reg [63:0] registers [0:31];
-<<<<<<< HEAD
     integer i;
-=======
->>>>>>> 296d06dfcf9f0ca3c8ba8ef7898496458f928f96
     assign rs1_data_out = registers[rs1_index];
     assign rs2_data_out = registers[rs2_index];
 
     always @(posedge clk or posedge rst) begin
         if(rst) begin
-<<<<<<< HEAD
             for(i=0;i<32;i=i+1)
             begin
                 registers[i] <= 64'd0;
             end
         end
         else if(wb_en && rd_index != 5'd0) begin
-=======
-            registers[0] <= 64'd0;
-        end
-        else if(wb_en && rd_index !== 5'd0) begin
->>>>>>> 296d06dfcf9f0ca3c8ba8ef7898496458f928f96
             registers[rd_index] <= wb_data;
         end
         else begin

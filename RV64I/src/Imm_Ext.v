@@ -1,19 +1,9 @@
 module Imm_Ext(
     input [31:0] inst,
-<<<<<<< HEAD
     output reg [63:0] imm_ext_out
 );
     always @(*) begin
         case(inst[6:2])
-=======
-    output  reg [64:0] imm_ext_out
-);
-    always @(*) begin
-        case(inst[6:2])
-            `I_type_W: begin
-                imm_ext_out = {{52{inst[31]}},inst[31:20]};
-            end
->>>>>>> 296d06dfcf9f0ca3c8ba8ef7898496458f928f96
             `I_type_arithmetic: begin
                 imm_ext_out = {{52{inst[31]}},inst[31:20]};
             end

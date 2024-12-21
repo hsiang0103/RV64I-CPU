@@ -1,0 +1,111 @@
+0
+35
++PROG=prog5
++itf+/opt/CIC/Synopsys/vcs/cur/linux64/lib/vcsdp_lite.tab
++v2k
++vcsd1
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/opt/CIC/Synopsys/vcs/cur/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /opt/CIC/Synopsys/vcs/cur/linux64/lib/libvirsim.so /opt/CIC/Synopsys/vcs/cur/linux64/lib/liberrorinf.so /opt/CIC/Synopsys/vcs/cur/linux64/lib/libsnpsmalloc.so /opt/CIC/Synopsys/vcs/cur/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/opt/CIC/Synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/opt/CIC/Synopsys/verdi/2023.03-sp2/share/PLI/VCS/LINUX64/pli.a -ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/opt/CIC/Synopsys/vcs/cur/include
+-Mxllcflags=
+-P
+-Xvcs_run_simv=1
+-debug_access+all
+-fsdb
+-full64
+-gen_obj
+-l
+-picarchive
+-sverilog
+/opt/CIC/Synopsys/vcs/cur/linux64/bin/vcs1
+vcs.log
+/opt/CIC/Synopsys/verdi/2023.03-sp2/share/PLI/VCS/LINUX64/verdi.tab
+top_tb.sv
+44
+XDG_SESSION_ID=10424
+XDG_RUNTIME_DIR=/run/user/1000015
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+VSCODE_IPC_HOOK_CLI=/run/user/1000015/vscode-ipc-92af4a1d-9ccb-499f-a09d-69f62493f292.sock
+VSCODE_GIT_IPC_HANDLE=/run/user/1000015/vscode-git-f931454e64.sock
+VSCODE_GIT_ASKPASS_NODE=/homes/nfs/caslab_bs/.vscode-server/cli/servers/Stable-fabdb6a30b49f79a7aba0f2ad9df9b399473380f/server/node
+VSCODE_GIT_ASKPASS_MAIN=/homes/nfs/caslab_bs/.vscode-server/cli/servers/Stable-fabdb6a30b49f79a7aba0f2ad9df9b399473380f/server/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+VMR_MODE_FLAG=64
+VERDI_HOME=/opt/CIC/Synopsys/verdi/2023.03-sp2
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=vcs.log
+VCS_HOME=/opt/CIC/Synopsys/vcs/cur
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+USER_NOVNC=1
+UNAME=/bin/uname
+TOOL_HOME=/opt/CIC/Synopsys/vcs/cur/linux64
+TERM_PROGRAM_VERSION=1.96.2
+TERM_PROGRAM=vscode
+TENSORPACK_DATASET=/homes/nfs/caslab_bs/workspace/tensorpack_data
+SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+SSL_CERT_DIR=/usr/lib/ssl/certs
+SSH_CONNECTION=111.255.45.172 62645 140.116.164.230 2617
+SSH_CLIENT=111.255.45.172 62645 2617
+SNPS_VCS_PYTHON3=/opt/CIC/Synopsys/vcs/cur/linux64/bin/Python-3.6.1/bin/python3
+SNPS_VCS_CLANG_PATH=/opt/CIC/Synopsys/vcs/cur/linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=ubuntu
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+OVA_UUM=0
+MSM_PRODUCT=MSM
+MSM_HOME=/usr/local/MegaRAID Storage Manager
+LESSOPEN=| /usr/bin/lesspipe %s
+LESSCLOSE=/usr/bin/lesspipe %s %s
+LC_ALL=C
+GIT_ASKPASS=/homes/nfs/caslab_bs/.vscode-server/cli/servers/Stable-fabdb6a30b49f79a7aba0f2ad9df9b399473380f/server/extensions/git/dist/askpass.sh
+FNP_IP_ENV=1
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000015/bus
+COLORTERM=truecolor
+0
+0
+19
+1734767161 ./src/dcache.v
+1734765927 ./src/Data_mem.v
+1734758514 ./src/Reg_W.v
+1734758514 ./src/Reg_M.v
+1734758514 ./src/Reg_E.v
+1734758514 ./src/Reg_D.v
+1734767045 ./src/Controller.v
+1734758514 ./src/LD_Filter.v
+1734758514 ./src/Reg_PC.v
+1734758514 ./src/JB_Unit.v
+1734766255 ./src/Imm_Ext.v
+1734758514 ./src/Decoder.v
+1734758514 ./src/ALU.v
+1734767407 ./src/Reg_File.v
+1734758514 ./src/SRAM.v
+1734766337 ./Top.v
+1734766479 top_tb.sv
+1693225683 /opt/CIC/Synopsys/verdi/2023.03-sp2/share/PLI/VCS/LINUX64/verdi.tab
+1693040877 /opt/CIC/Synopsys/vcs/cur/linux64/lib/vcsdp_lite.tab
+4
+1693043931 /opt/CIC/Synopsys/vcs/cur/linux64/lib/libvirsim.so
+1693042805 /opt/CIC/Synopsys/vcs/cur/linux64/lib/liberrorinf.so
+1693042720 /opt/CIC/Synopsys/vcs/cur/linux64/lib/libsnpsmalloc.so
+1693042802 /opt/CIC/Synopsys/vcs/cur/linux64/lib/libvfs.so
+1734767416 simv.daidir
+-1 partitionlib

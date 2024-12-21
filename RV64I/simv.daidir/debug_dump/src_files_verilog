@@ -1,0 +1,17 @@
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/Top.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/ALU.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Controller.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Data_mem.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Decoder.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Imm_Ext.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/JB_Unit.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/LD_Filter.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Reg_D.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Reg_E.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Reg_File.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Reg_M.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Reg_PC.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/Reg_W.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/SRAM.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/src/dcache.v
+/homes/nfs/caslab_bs/Desktop/Hsiang/systemC/RV64I/top_tb.sv
