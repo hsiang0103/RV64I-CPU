@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 `define CYCLE 10.0
-`define MAX 100000000000
+`define MAX 10000000
 `include "./Top.v"
 
 module top_tb;
@@ -14,12 +14,12 @@ module top_tb;
 
     initial begin
         err = 0;
+        clk = 0;
         if($value$plusargs("PROG=%s", prog)) begin
             if(prog == "prog0") begin
                 if($value$plusargs("FILE=%s", filename)) begin
                     if(filename == "all") begin
                         for (i = 0; i < 50; i++) begin
-                            clk = 0;
                             rst = 1;
                             prog_path = $sformatf("./test/prog0/%s.hex", testbench_data[i]);
                             handler = $fopen(prog_path, "r");

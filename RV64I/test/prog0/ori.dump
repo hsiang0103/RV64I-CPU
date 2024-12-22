@@ -1,0 +1,273 @@
+
+./finish/ori.elf:     file format elf64-littleriscv
+./finish/ori.elf
+architecture: riscv:rv64, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0000000000000000
+
+Program Header:
+0x70000003 off    0x000000000000122c vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**0
+         filesz 0x000000000000001a memsz 0x0000000000000000 flags r--
+    LOAD off    0x0000000000001000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
+         filesz 0x000000000000022c memsz 0x000000000000022c flags r-x
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         0000022c  0000000000000000  0000000000000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  0000000000000000  0000000000000000  0000122c  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .riscv.attributes	0000000000000000 .riscv.attributes
+0000000000000000 l    df *ABS*	0000000000000000 setup.o
+0000000000000000 l       .text	0000000000000000 _start
+0000000000000000 l       .text	0000000000000000 init_stack
+0000000000000008 l       .text	0000000000000000 SystemInit
+000000000000000c l       .text	0000000000000000 SystemExit
+000000000000001c l       .text	0000000000000000 dead_loop
+0000000000000000 l    df *ABS*	0000000000000000 ori.o
+0000000000000030 l       .text	0000000000000000 ori_2
+000000000000021c l       .text	0000000000000000 failed
+0000000000000048 l       .text	0000000000000000 ori_3
+0000000000000064 l       .text	0000000000000000 ori_4
+0000000000000080 l       .text	0000000000000000 ori_5
+000000000000009c l       .text	0000000000000000 ori_6
+00000000000000c8 l       .text	0000000000000000 ori_7
+00000000000000f8 l       .text	0000000000000000 ori_8
+000000000000012c l       .text	0000000000000000 ori_9
+0000000000000164 l       .text	0000000000000000 ori_10
+0000000000000190 l       .text	0000000000000000 ori_11
+00000000000001bc l       .text	0000000000000000 ori_12
+00000000000001f0 l       .text	0000000000000000 ori_13
+0000000000000200 l       .text	0000000000000000 ori_14
+0000000000000218 l       .text	0000000000000000 pass
+0000000000000220 l       .text	0000000000000000 main_exit
+000000000000fffc g       .text	0000000000000000 _sim_end
+0000000000000020 g       .text	0000000000000000 main
+0000000000009000 g       .text	0000000000000000 _answer
+000000000000fff0 g       .text	0000000000000000 _stack
+
+
+Contents of section .text:
+ 0000 17010100 130101ff ef008001 97020100  ................
+ 0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
+ 0020 130181ff 23208100 17940000 130484fd  ....# ..........
+ 0030 93012000 b70601ff 9b8606f0 13e7f6f0  .. .............
+ 0040 9303f0f0 631c771c 93013000 b716f00f  ....c.w...0.....
+ 0050 9b8606ff 13e7060f b713f00f 9b8303ff  ................
+ 0060 631e771a 93014000 b706ff00 9b86f60f  c.w...@.........
+ 0070 13e7f670 b703ff00 9b83f37f 6310771a  ...p........c.w.
+ 0080 93015000 b7f60ff0 9b86f600 13e7060f  ..P.............
+ 0090 b7f30ff0 9b83f30f 63127718 93016000  ........c.w...`.
+ 00a0 b7050100 9b8515f0 93950501 938505f0  ................
+ 00b0 93e5050f b7030100 9b8313f0 93930301  ................
+ 00c0 938303ff 639c7514 93017000 13020000  ....c.u...p.....
+ 00d0 b710f00f 9b8000ff 13e7000f 13030700  ................
+ 00e0 13021200 93022000 e31452fe b713f00f  ...... ...R.....
+ 00f0 9b8303ff 63147312 93018000 13020000  ....c.s.........
+ 0100 b700ff00 9b80f00f 13e7f070 13000000  ...........p....
+ 0110 13030700 13021200 93022000 e31252fe  .......... ...R.
+ 0120 b703ff00 9b83f37f 631a730e 93019000  ........c.s.....
+ 0130 13020000 b7f00ff0 9b80f000 13e7000f  ................
+ 0140 13000000 13000000 13030700 13021200  ................
+ 0150 93022000 e31052fe b7f30ff0 9b83f30f  .. ...R.........
+ 0160 631e730a 9301a000 13020000 b710f00f  c.s.............
+ 0170 9b8000ff 13e7000f 13021200 93022000  .............. .
+ 0180 e31652fe b713f00f 9b8303ff 63187708  ..R.........c.w.
+ 0190 9301b000 13020000 b700ff00 9b80f00f  ................
+ 01a0 13000000 13e7f0f0 13021200 93022000  .............. .
+ 01b0 e31452fe 9303f0ff 63127706 9301c000  ..R.....c.w.....
+ 01c0 13020000 b7f00ff0 9b80f000 13000000  ................
+ 01d0 13000000 13e7000f 13021200 93022000  .............. .
+ 01e0 e31252fe b7f30ff0 9b83f30f 63187702  ..R.........c.w.
+ 01f0 9301d000 9360000f 9303000f 63907002  .....`......c.p.
+ 0200 9301e000 b700ff00 9b80f00f 13e0f070  ...............p
+ 0210 93030000 63147000 93010000 23203400  ....c.p.....# 4.
+ 0220 03240100 13018100 67800000           .$......g...    
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727636 34693270 3100               .rv64i2p1.      
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	ff010113          	addi	sp,sp,-16 # fff0 <_stack>
+
+0000000000000008 <SystemInit>:
+   8:	018000ef          	jal	20 <main>
+
+000000000000000c <SystemExit>:
+   c:	00010297          	auipc	t0,0x10
+  10:	ff028293          	addi	t0,t0,-16 # fffc <_sim_end>
+  14:	fff00313          	li	t1,-1
+  18:	0062a023          	sw	t1,0(t0)
+
+000000000000001c <dead_loop>:
+  1c:	0000006f          	j	1c <dead_loop>
+
+0000000000000020 <main>:
+  20:	ff810113          	addi	sp,sp,-8
+  24:	00812023          	sw	s0,0(sp)
+  28:	00009417          	auipc	s0,0x9
+  2c:	fd840413          	addi	s0,s0,-40 # 9000 <_answer>
+
+0000000000000030 <ori_2>:
+  30:	00200193          	li	gp,2
+  34:	ff0106b7          	lui	a3,0xff010
+  38:	f006869b          	addiw	a3,a3,-256 # ffffffffff00ff00 <_sim_end+0xfffffffffeffff04>
+  3c:	f0f6e713          	ori	a4,a3,-241
+  40:	f0f00393          	li	t2,-241
+  44:	1c771c63          	bne	a4,t2,21c <failed>
+
+0000000000000048 <ori_3>:
+  48:	00300193          	li	gp,3
+  4c:	0ff016b7          	lui	a3,0xff01
+  50:	ff06869b          	addiw	a3,a3,-16 # ff00ff0 <_sim_end+0xfef0ff4>
+  54:	0f06e713          	ori	a4,a3,240
+  58:	0ff013b7          	lui	t2,0xff01
+  5c:	ff03839b          	addiw	t2,t2,-16 # ff00ff0 <_sim_end+0xfef0ff4>
+  60:	1a771e63          	bne	a4,t2,21c <failed>
+
+0000000000000064 <ori_4>:
+  64:	00400193          	li	gp,4
+  68:	00ff06b7          	lui	a3,0xff0
+  6c:	0ff6869b          	addiw	a3,a3,255 # ff00ff <_sim_end+0xfe0103>
+  70:	70f6e713          	ori	a4,a3,1807
+  74:	00ff03b7          	lui	t2,0xff0
+  78:	7ff3839b          	addiw	t2,t2,2047 # ff07ff <_sim_end+0xfe0803>
+  7c:	1a771063          	bne	a4,t2,21c <failed>
+
+0000000000000080 <ori_5>:
+  80:	00500193          	li	gp,5
+  84:	f00ff6b7          	lui	a3,0xf00ff
+  88:	00f6869b          	addiw	a3,a3,15 # fffffffff00ff00f <_sim_end+0xfffffffff00ef013>
+  8c:	0f06e713          	ori	a4,a3,240
+  90:	f00ff3b7          	lui	t2,0xf00ff
+  94:	0ff3839b          	addiw	t2,t2,255 # fffffffff00ff0ff <_sim_end+0xfffffffff00ef103>
+  98:	18771263          	bne	a4,t2,21c <failed>
+
+000000000000009c <ori_6>:
+  9c:	00600193          	li	gp,6
+  a0:	000105b7          	lui	a1,0x10
+  a4:	f015859b          	addiw	a1,a1,-255 # ff01 <_answer+0x6f01>
+  a8:	01059593          	slli	a1,a1,0x10
+  ac:	f0058593          	addi	a1,a1,-256
+  b0:	0f05e593          	ori	a1,a1,240
+  b4:	000103b7          	lui	t2,0x10
+  b8:	f013839b          	addiw	t2,t2,-255 # ff01 <_answer+0x6f01>
+  bc:	01039393          	slli	t2,t2,0x10
+  c0:	ff038393          	addi	t2,t2,-16
+  c4:	14759c63          	bne	a1,t2,21c <failed>
+
+00000000000000c8 <ori_7>:
+  c8:	00700193          	li	gp,7
+  cc:	00000213          	li	tp,0
+  d0:	0ff010b7          	lui	ra,0xff01
+  d4:	ff00809b          	addiw	ra,ra,-16 # ff00ff0 <_sim_end+0xfef0ff4>
+  d8:	0f00e713          	ori	a4,ra,240
+  dc:	00070313          	mv	t1,a4
+  e0:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+  e4:	00200293          	li	t0,2
+  e8:	fe5214e3          	bne	tp,t0,d0 <ori_7+0x8>
+  ec:	0ff013b7          	lui	t2,0xff01
+  f0:	ff03839b          	addiw	t2,t2,-16 # ff00ff0 <_sim_end+0xfef0ff4>
+  f4:	12731463          	bne	t1,t2,21c <failed>
+
+00000000000000f8 <ori_8>:
+  f8:	00800193          	li	gp,8
+  fc:	00000213          	li	tp,0
+ 100:	00ff00b7          	lui	ra,0xff0
+ 104:	0ff0809b          	addiw	ra,ra,255 # ff00ff <_sim_end+0xfe0103>
+ 108:	70f0e713          	ori	a4,ra,1807
+ 10c:	00000013          	nop
+ 110:	00070313          	mv	t1,a4
+ 114:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 118:	00200293          	li	t0,2
+ 11c:	fe5212e3          	bne	tp,t0,100 <ori_8+0x8>
+ 120:	00ff03b7          	lui	t2,0xff0
+ 124:	7ff3839b          	addiw	t2,t2,2047 # ff07ff <_sim_end+0xfe0803>
+ 128:	0e731a63          	bne	t1,t2,21c <failed>
+
+000000000000012c <ori_9>:
+ 12c:	00900193          	li	gp,9
+ 130:	00000213          	li	tp,0
+ 134:	f00ff0b7          	lui	ra,0xf00ff
+ 138:	00f0809b          	addiw	ra,ra,15 # fffffffff00ff00f <_sim_end+0xfffffffff00ef013>
+ 13c:	0f00e713          	ori	a4,ra,240
+ 140:	00000013          	nop
+ 144:	00000013          	nop
+ 148:	00070313          	mv	t1,a4
+ 14c:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 150:	00200293          	li	t0,2
+ 154:	fe5210e3          	bne	tp,t0,134 <ori_9+0x8>
+ 158:	f00ff3b7          	lui	t2,0xf00ff
+ 15c:	0ff3839b          	addiw	t2,t2,255 # fffffffff00ff0ff <_sim_end+0xfffffffff00ef103>
+ 160:	0a731e63          	bne	t1,t2,21c <failed>
+
+0000000000000164 <ori_10>:
+ 164:	00a00193          	li	gp,10
+ 168:	00000213          	li	tp,0
+ 16c:	0ff010b7          	lui	ra,0xff01
+ 170:	ff00809b          	addiw	ra,ra,-16 # ff00ff0 <_sim_end+0xfef0ff4>
+ 174:	0f00e713          	ori	a4,ra,240
+ 178:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 17c:	00200293          	li	t0,2
+ 180:	fe5216e3          	bne	tp,t0,16c <ori_10+0x8>
+ 184:	0ff013b7          	lui	t2,0xff01
+ 188:	ff03839b          	addiw	t2,t2,-16 # ff00ff0 <_sim_end+0xfef0ff4>
+ 18c:	08771863          	bne	a4,t2,21c <failed>
+
+0000000000000190 <ori_11>:
+ 190:	00b00193          	li	gp,11
+ 194:	00000213          	li	tp,0
+ 198:	00ff00b7          	lui	ra,0xff0
+ 19c:	0ff0809b          	addiw	ra,ra,255 # ff00ff <_sim_end+0xfe0103>
+ 1a0:	00000013          	nop
+ 1a4:	f0f0e713          	ori	a4,ra,-241
+ 1a8:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 1ac:	00200293          	li	t0,2
+ 1b0:	fe5214e3          	bne	tp,t0,198 <ori_11+0x8>
+ 1b4:	fff00393          	li	t2,-1
+ 1b8:	06771263          	bne	a4,t2,21c <failed>
+
+00000000000001bc <ori_12>:
+ 1bc:	00c00193          	li	gp,12
+ 1c0:	00000213          	li	tp,0
+ 1c4:	f00ff0b7          	lui	ra,0xf00ff
+ 1c8:	00f0809b          	addiw	ra,ra,15 # fffffffff00ff00f <_sim_end+0xfffffffff00ef013>
+ 1cc:	00000013          	nop
+ 1d0:	00000013          	nop
+ 1d4:	0f00e713          	ori	a4,ra,240
+ 1d8:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 1dc:	00200293          	li	t0,2
+ 1e0:	fe5212e3          	bne	tp,t0,1c4 <ori_12+0x8>
+ 1e4:	f00ff3b7          	lui	t2,0xf00ff
+ 1e8:	0ff3839b          	addiw	t2,t2,255 # fffffffff00ff0ff <_sim_end+0xfffffffff00ef103>
+ 1ec:	02771863          	bne	a4,t2,21c <failed>
+
+00000000000001f0 <ori_13>:
+ 1f0:	00d00193          	li	gp,13
+ 1f4:	0f006093          	ori	ra,zero,240
+ 1f8:	0f000393          	li	t2,240
+ 1fc:	02709063          	bne	ra,t2,21c <failed>
+
+0000000000000200 <ori_14>:
+ 200:	00e00193          	li	gp,14
+ 204:	00ff00b7          	lui	ra,0xff0
+ 208:	0ff0809b          	addiw	ra,ra,255 # ff00ff <_sim_end+0xfe0103>
+ 20c:	70f0e013          	ori	zero,ra,1807
+ 210:	00000393          	li	t2,0
+ 214:	00701463          	bne	zero,t2,21c <failed>
+
+0000000000000218 <pass>:
+ 218:	00000193          	li	gp,0
+
+000000000000021c <failed>:
+ 21c:	00342023          	sw	gp,0(s0)
+
+0000000000000220 <main_exit>:
+ 220:	00012403          	lw	s0,0(sp)
+ 224:	00810113          	addi	sp,sp,8
+ 228:	00008067          	ret
