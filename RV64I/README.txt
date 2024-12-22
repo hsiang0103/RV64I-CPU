@@ -1,8 +1,8 @@
 vcs top_tb.sv -sverilog -full64 -R -debug_access+all +v2k +PROG=prog0 +FILE=all
 
 There are 2 arguements need to be specify.
-+PROG=prog@ @ for the file you want to run. Ex.+PROG=prog0 for file "prog0".
-+FILE=@ @ for the specific testbench you want to run.
++PROG=prog@ : @ for the file you want to run. Ex.+PROG=prog0 for file "prog0".
++FILE=@ : @ for the specific testbench you want to run.
 
 49 testbenches for each instruction:
     use "all" to run all the testbenches.
