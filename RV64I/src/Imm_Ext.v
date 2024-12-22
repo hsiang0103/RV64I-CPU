@@ -4,6 +4,9 @@ module Imm_Ext(
 );
     always @(*) begin
         case(inst[6:2])
+            `I_type_W: begin
+                imm_ext_out = {{52{inst[31]}},inst[31:20]};
+            end
             `I_type_arithmetic: begin
                 imm_ext_out = {{52{inst[31]}},inst[31:20]};
             end
