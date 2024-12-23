@@ -12,9 +12,8 @@ main:
 # ######################################
 # ### Load address of _answer to s0 
 # ######################################
-    addi sp, sp, -8
-    sw s0, 0(sp)
-    la s0, _answer
+    mv  x28, s0
+    mv  x29, ra
 
 # ######################################
 # ### lwu test cases
@@ -179,6 +178,6 @@ main_exit:
 # ######################################
 # ### Return to end the simulation
 # ######################################
-    lw  s0, 0(sp)      # Retrieve Callee Saved
-    addi sp, sp, 8
+    mv  ra, x29
+    mv  s0, x28
     ret
