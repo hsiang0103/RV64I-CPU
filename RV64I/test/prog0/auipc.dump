@@ -6,16 +6,16 @@ EXEC_P, HAS_SYMS, D_PAGED
 start address 0x0000000000000000
 
 Program Header:
-0x70000003 off    0x000000000000108c vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**0
+0x70000003 off    0x0000000000001084 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**0
          filesz 0x000000000000001a memsz 0x0000000000000000 flags r--
     LOAD off    0x0000000000001000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
-         filesz 0x000000000000008c memsz 0x000000000000008c flags r-x
+         filesz 0x0000000000000084 memsz 0x0000000000000084 flags r-x
 
 Sections:
 Idx Name          Size      VMA               LMA               File off  Algn
-  0 .text         0000008c  0000000000000000  0000000000000000  00001000  2**3
+  0 .text         00000084  0000000000000000  0000000000000000  00001000  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .riscv.attributes 0000001a  0000000000000000  0000000000000000  0000108c  2**0
+  1 .riscv.attributes 0000001a  0000000000000000  0000000000000000  00001084  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 0000000000000000 l    d  .text	0000000000000000 .text
@@ -27,11 +27,11 @@ SYMBOL TABLE:
 000000000000000c l       .text	0000000000000000 SystemExit
 000000000000001c l       .text	0000000000000000 dead_loop
 0000000000000000 l    df *ABS*	0000000000000000 auipc.o
-0000000000000030 l       .text	0000000000000000 auipc_2
-0000000000000078 l       .text	0000000000000000 failed
-0000000000000054 l       .text	0000000000000000 auipc_3
-0000000000000074 l       .text	0000000000000000 pass
-000000000000007c l       .text	0000000000000000 main_exit
+0000000000000028 l       .text	0000000000000000 auipc_2
+0000000000000070 l       .text	0000000000000000 failed
+000000000000004c l       .text	0000000000000000 auipc_3
+000000000000006c l       .text	0000000000000000 pass
+0000000000000074 l       .text	0000000000000000 main_exit
 000000000000fffc g       .text	0000000000000000 _sim_end
 0000000000000020 g       .text	0000000000000000 main
 0000000000009000 g       .text	0000000000000000 _answer
@@ -41,13 +41,13 @@ SYMBOL TABLE:
 Contents of section .text:
  0000 17010100 130101ff ef008001 97020100  ................
  0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
- 0020 130181ff 23208100 17940000 130484fd  ....# ..........
- 0030 93012000 13000000 17250000 1305c571  .. ......%.....q
- 0040 ef054000 3305b540 b7230000 9b830371  ..@.3..@.#.....q
- 0050 63147502 93013000 17e5ffff 1305c58f  c.u...0.........
- 0060 ef054000 3305b540 b7e3ffff 9b83038f  ..@.3..@........
- 0070 63147500 93010000 23203400 03240100  c.u.....# 4..$..
- 0080 13018100 67800000 00000000           ....g.......    
+ 0020 130e0400 938e0000 93012000 13000000  .......... .....
+ 0030 17250000 1305c571 ef054000 3305b540  .%.....q..@.3..@
+ 0040 b7230000 9b830371 63147502 93013000  .#.....qc.u...0.
+ 0050 17e5ffff 1305c58f ef054000 3305b540  ..........@.3..@
+ 0060 b7e3ffff 9b83038f 63147500 93010000  ........c.u.....
+ 0070 23203400 93800e00 13040e00 67800000  # 4.........g...
+ 0080 00000000                             ....            
 Contents of section .riscv.attributes:
  0000 41190000 00726973 63760001 0f000000  A....riscv......
  0010 05727636 34693270 3100               .rv64i2p1.      
@@ -71,41 +71,39 @@ Disassembly of section .text:
   1c:	0000006f          	j	1c <dead_loop>
 
 0000000000000020 <main>:
-  20:	ff810113          	addi	sp,sp,-8
-  24:	00812023          	sw	s0,0(sp)
-  28:	00009417          	auipc	s0,0x9
-  2c:	fd840413          	addi	s0,s0,-40 # 9000 <_answer>
+  20:	00040e13          	mv	t3,s0
+  24:	00008e93          	mv	t4,ra
 
-0000000000000030 <auipc_2>:
-  30:	00200193          	li	gp,2
-  34:	00000013          	nop
-  38:	00002517          	auipc	a0,0x2
-  3c:	71c50513          	addi	a0,a0,1820 # 2754 <main_exit+0x26d8>
-  40:	004005ef          	jal	a1,44 <auipc_2+0x14>
-  44:	40b50533          	sub	a0,a0,a1
-  48:	000023b7          	lui	t2,0x2
-  4c:	7103839b          	addiw	t2,t2,1808 # 2710 <main_exit+0x2694>
-  50:	02751463          	bne	a0,t2,78 <failed>
+0000000000000028 <auipc_2>:
+  28:	00200193          	li	gp,2
+  2c:	00000013          	nop
+  30:	00002517          	auipc	a0,0x2
+  34:	71c50513          	addi	a0,a0,1820 # 274c <main_exit+0x26d8>
+  38:	004005ef          	jal	a1,3c <auipc_2+0x14>
+  3c:	40b50533          	sub	a0,a0,a1
+  40:	000023b7          	lui	t2,0x2
+  44:	7103839b          	addiw	t2,t2,1808 # 2710 <main_exit+0x269c>
+  48:	02751463          	bne	a0,t2,70 <failed>
 
-0000000000000054 <auipc_3>:
-  54:	00300193          	li	gp,3
-  58:	ffffe517          	auipc	a0,0xffffe
-  5c:	8fc50513          	addi	a0,a0,-1796 # ffffffffffffd954 <_sim_end+0xfffffffffffed958>
-  60:	004005ef          	jal	a1,64 <auipc_3+0x10>
-  64:	40b50533          	sub	a0,a0,a1
-  68:	ffffe3b7          	lui	t2,0xffffe
-  6c:	8f03839b          	addiw	t2,t2,-1808 # ffffffffffffd8f0 <_sim_end+0xfffffffffffed8f4>
-  70:	00751463          	bne	a0,t2,78 <failed>
+000000000000004c <auipc_3>:
+  4c:	00300193          	li	gp,3
+  50:	ffffe517          	auipc	a0,0xffffe
+  54:	8fc50513          	addi	a0,a0,-1796 # ffffffffffffd94c <_sim_end+0xfffffffffffed950>
+  58:	004005ef          	jal	a1,5c <auipc_3+0x10>
+  5c:	40b50533          	sub	a0,a0,a1
+  60:	ffffe3b7          	lui	t2,0xffffe
+  64:	8f03839b          	addiw	t2,t2,-1808 # ffffffffffffd8f0 <_sim_end+0xfffffffffffed8f4>
+  68:	00751463          	bne	a0,t2,70 <failed>
 
-0000000000000074 <pass>:
-  74:	00000193          	li	gp,0
+000000000000006c <pass>:
+  6c:	00000193          	li	gp,0
 
-0000000000000078 <failed>:
-  78:	00342023          	sw	gp,0(s0)
+0000000000000070 <failed>:
+  70:	00342023          	sw	gp,0(s0)
 
-000000000000007c <main_exit>:
-  7c:	00012403          	lw	s0,0(sp)
-  80:	00810113          	addi	sp,sp,8
-  84:	00008067          	ret
-  88:	0000                	.insn	2, 0x
+0000000000000074 <main_exit>:
+  74:	000e8093          	mv	ra,t4
+  78:	000e0413          	mv	s0,t3
+  7c:	00008067          	ret
+  80:	0000                	.insn	2, 0x
 	...
