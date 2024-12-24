@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 `define CYCLE 10.0
-`define MAX 10000000
+`define MAX 100000
 `include "./Top.v"
 
 module top_tb;
