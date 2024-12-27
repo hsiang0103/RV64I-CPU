@@ -176,7 +176,7 @@ module ALU(
                     alu_out = {{32{alu_out_32bits[31]}}, alu_out_32bits};
                 end
                 else begin
-                    alu_out_32bits = $signed(operand1) >>> operand2[4:0];
+                    alu_out_32bits = $signed(operand1[31:0]) >>> operand2[4:0];
                     alu_out = {{32{alu_out_32bits[31]}}, alu_out_32bits};
                 end
             end
@@ -207,7 +207,7 @@ module ALU(
                     alu_out = {{32{alu_out_32bits[31]}}, alu_out_32bits};
                 end
                 else begin
-                    alu_out_32bits = $signed(operand1) >>> operand2[4:0];
+                    alu_out_32bits = $signed(operand1[31:0]) >>> operand2[4:0];
                     alu_out = {{32{alu_out_32bits[31]}}, alu_out_32bits};
                 end
             end
