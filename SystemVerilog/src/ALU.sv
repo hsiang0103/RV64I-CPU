@@ -51,7 +51,7 @@ always_comb begin
                 pre_calculate = {32'b0, ($signed(operand_1[31:0]) >>> shamt)};
             end
             else begin
-                pre_calculate = operand_1 >> shamt;
+                pre_calculate = $signed(operand_1) >>> shamt;
             end
         end
         default: begin

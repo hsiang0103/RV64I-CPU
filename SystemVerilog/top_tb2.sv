@@ -28,7 +28,8 @@ module top_tb;
 
   Core Core (
     .clk(clk),
-    .rst(rst)
+    .rst(rst),
+    .halt(halt)
   );
 
   always #(`CYCLE/2) clk = ~clk;
@@ -38,8 +39,8 @@ module top_tb;
     clk = 0; rst = 0;
 
     // Get Path (main.hex / golden.hex)
-    prog_path = "./test/prog2/main.hex";
-    gold_path = "./test/prog2/golden.hex";
+    prog_path = "./test/prog1/main.hex";
+    gold_path = "./test/prog1/golden.hex";
 
 
     // Load main.hex (Program & Preset data)

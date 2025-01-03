@@ -180,12 +180,7 @@ module Controller
         OP_IMM: begin
             case(E_f3)
             ADD_SUB_FUNC3: begin
-                if(!E_f7) begin
-                    alu_control.alu_op = ALU_OP_ADD;
-                end
-                else begin
-                    alu_control.alu_op = ALU_OP_SUB;
-                end
+                alu_control.alu_op = ALU_OP_ADD;
             end
             SLL_FUNC3: begin
                 alu_control.alu_op = ALU_OP_SLL;
@@ -221,12 +216,7 @@ module Controller
         OP_IMM_32: begin
             case(E_f3)
             ADD_SUB_FUNC3: begin
-                if(!E_f7) begin
-                    alu_control.alu_op = ALU_OP_ADD;
-                end
-                else begin
-                    alu_control.alu_op = ALU_OP_SUB;
-                end
+                alu_control.alu_op = ALU_OP_ADD;
             end
             SLL_FUNC3: begin
                 alu_control.alu_op = ALU_OP_SLL;
