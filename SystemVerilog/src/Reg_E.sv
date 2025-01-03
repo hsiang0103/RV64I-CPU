@@ -14,7 +14,7 @@ module Reg_E
     output dw rs2_data_E,
     output dw sext_imm_E
 );
-    always_ff @(posedge clk or posedge rst) begin
+    always_ff @(posedge clk or negedge rst) begin
         if(!rst) begin
             current_pc_E <= 64'd0;
             rs1_data_E <= 64'd0;

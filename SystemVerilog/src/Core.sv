@@ -25,11 +25,11 @@ module Core
     logic [31:0] inst, inst_dummy, inst_D;
     /* verilator lint_on UNUSEDSIGNAL */
     next_pc_sel_t next_pc_sel;
-    dw next_pc, current_pc, current_pc_plus_4, alu_out_as_pc, current_pc_D, current_pc_E;
+    dw next_pc, current_pc, current_pc_plus_4, alu_out_as_pc, current_pc_D, current_pc_E, current_pc_M, current_pc_W;
     dw imm_ext_out, reg_write_data, rs1_read_data, rs2_read_data, reg_a0, reg_a1;
     dw alu_out, dm_read_data, ldfilter_out_data, alu_out_W;
     logic [2:0] W_f3;
-    logic [4:0] rs1_index, rs2_index, rd_index, W_rd;
+    logic [4:0] rs1_index, rs2_index, W_rd;
     logic [7:0] im_w_mask, dm_w_mask;
 
 
@@ -77,10 +77,9 @@ module Core
     /* Register File */
     assign rs1_index = inst_D[19:15];
     assign rs2_index = inst_D[24:20];
-    assign rd_index  = inst_D[11:7];
     always_comb begin
         unique if (wb_sel == SEL_PC_PLUS_4) begin
-            reg_write_data = current_pc_plus_4;
+            reg_write_data = current_pc_W + 64'd4;;
         end else if (wb_sel == SEL_LOAD_DATA) begin
             reg_write_data = ldfilter_out_data;
         end else begin
@@ -93,7 +92,7 @@ module Core
         .rs1_index(rs1_index),
         .rs2_index(rs2_index),
         .w_en(reg_w_en),
-        .rd_index(rd_index),
+        .rd_index(W_rd),
         .rd_data(reg_write_data),
         .rs1_data(rs1_read_data),
         .rs2_data(rs2_read_data),
@@ -157,7 +156,7 @@ module Core
         end
         endcase
     end
-    assign rs1_or_current_pc_or_zero = (is_lui) ? 64'd0 : ((alu_op1_sel == ALU_OP1_SEL_RS1) ? newest_rs1_data : current_pc);
+    assign rs1_or_current_pc_or_zero = (is_lui) ? 64'd0 : ((alu_op1_sel == ALU_OP1_SEL_RS1) ? newest_rs1_data : current_pc_E);
     assign rs2_or_imm = (alu_op2_sel == ALU_OP2_SEL_RS2) ? newest_rs2_data : imm_ext_out_E;
     ALU alu (
         .alu_control(alu_control),
@@ -181,6 +180,8 @@ module Core
         .rst(rst),
         .alu_out_E(alu_out),
         .rs2_data_E(newest_rs2_data),
+        .current_pc_E(current_pc_E),
+        .current_pc_M(current_pc_M),
         .alu_out_M(alu_out_M),
         .rs2_data_M(rs2_data_M)
     );
@@ -201,6 +202,8 @@ module Core
         .rst(rst),
         .alu_out_M(alu_out_M),
         .ld_data_M(dm_read_data),
+        .current_pc_M(current_pc_M),
+        .current_pc_W(current_pc_W),
         .alu_out_W(alu_out_W),
         .ld_data_W(ld_data_W)
     );
@@ -216,7 +219,7 @@ module Core
     Controller controller (
         .clk(clk),
         .rst(rst),
-        .inst(inst),
+        .inst(inst_D),
         .reg_a0(reg_a0),
         .reg_a1(reg_a1),
         .next_pc_sel(next_pc_sel),

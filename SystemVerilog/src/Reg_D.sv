@@ -10,7 +10,7 @@ module Reg_D
     output dw current_pc_D,
     output logic [31:0] inst_D
 );
-    always_ff @(posedge clk or posedge rst) begin
+    always_ff @(posedge clk or negedge rst) begin
         if(!rst) begin
             current_pc_D <= 64'd0;
             inst_D <= {25'd0, 7'b0010011};

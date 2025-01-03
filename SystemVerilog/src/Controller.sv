@@ -49,8 +49,8 @@ module Controller
     assign D_rd = inst.R_TYPE.rd;
     assign D_f7 = inst.R_TYPE.func7[5];
 
-    always_ff @(posedge clk or posedge rst) begin
-        if(rst) begin
+    always_ff @(posedge clk or negedge rst) begin
+        if(!rst) begin
             E_op <= OP_IMM;
             E_f3 <= 3'd0;
             E_rd <= 5'd0;
@@ -79,8 +79,8 @@ module Controller
         end
     end
 
-    always_ff @(posedge clk or posedge rst) begin
-        if(rst) begin
+    always_ff @(posedge clk or negedge rst) begin
+        if(!rst) begin
             M_op <= OP_IMM;
             M_f3 <= 3'd0;
             M_rd <= 5'd0;
@@ -92,8 +92,8 @@ module Controller
         end
     end
 
-    always_ff @(posedge clk or posedge rst) begin
-        if(rst) begin
+    always_ff @(posedge clk or negedge rst) begin
+        if(!rst) begin
             W_op <= OP_IMM;
             W_f3 <= 3'd0;
             W_rd <= 5'd0;
@@ -105,7 +105,7 @@ module Controller
         end
     end
 // is instruction LUI ?
-    assign is_lui = (D_op == LUI)? 1'b1:1'b0;
+    assign is_lui = (E_op == LUI)? 1'b1:1'b0;
 
 // alu control signal (operation)
     always_comb begin
@@ -414,8 +414,57 @@ module Controller
     end
 // next pc select
     always_comb begin
-        if(E_op == BRANCH && (bc_control.BrEq || bc_control.BrLt)) begin
-            next_pc_sel = NEXT_PC_SEL_TARGET;
+        if(E_op == BRANCH) begin
+            case(E_f3)
+            BEQ_FUNC3: begin
+                if(bc_control.BrEq) begin
+                    next_pc_sel = NEXT_PC_SEL_TARGET;
+                end
+                else begin
+                    next_pc_sel = NEXT_PC_SEL_PLUS_4;
+                end
+            end
+            BNE_FUNC3: begin
+                if(!bc_control.BrEq) begin
+                    next_pc_sel = NEXT_PC_SEL_TARGET;
+                end
+                else begin
+                    next_pc_sel = NEXT_PC_SEL_PLUS_4;
+                end
+            end
+            BLT_FUNC3: begin
+                if(bc_control.BrLt) begin
+                    next_pc_sel = NEXT_PC_SEL_TARGET;
+                end
+                else begin
+                    next_pc_sel = NEXT_PC_SEL_PLUS_4;
+                end
+            end
+            BGE_FUNC3 : begin
+                if(!bc_control.BrLt) begin
+                    next_pc_sel = NEXT_PC_SEL_TARGET;
+                end
+                else begin
+                    next_pc_sel = NEXT_PC_SEL_PLUS_4;
+                end
+            end
+            BLTU_FUNC3: begin
+                if(bc_control.BrLt) begin
+                    next_pc_sel = NEXT_PC_SEL_TARGET;
+                end
+                else begin
+                    next_pc_sel = NEXT_PC_SEL_PLUS_4;
+                end
+            end
+            BGEU_FUNC3: begin
+                if(!bc_control.BrLt) begin
+                    next_pc_sel = NEXT_PC_SEL_TARGET;
+                end
+                else begin
+                    next_pc_sel = NEXT_PC_SEL_PLUS_4;
+                end
+            end
+            endcase
         end
         else if(E_op == JAL || E_op == JALR) begin
             next_pc_sel = NEXT_PC_SEL_TARGET;
