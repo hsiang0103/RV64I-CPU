@@ -1,4 +1,6 @@
-module Reg_W(
+module Reg_W
+    import DEF::*;
+(
     input logic clk,
     input logic rst,
     input dw alu_out_M,

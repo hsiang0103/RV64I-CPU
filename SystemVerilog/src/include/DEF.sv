@@ -26,6 +26,22 @@ package DEF;
         alu_op_width_t alu_width;
     } alu_control_packet_t;
 
+    /* about Mux selection control */
+    typedef enum logic {
+        NEXT_PC_SEL_PLUS_4,
+        NEXT_PC_SEL_TARGET
+    } next_pc_sel_t;
+
+    typedef enum logic {
+        ALU_OP1_SEL_RS1,
+        ALU_OP1_SEL_PC
+    } alu_op1_sel_t;
+
+    typedef enum logic {
+        ALU_OP2_SEL_RS2,
+        ALU_OP2_SEL_IMM
+    } alu_op2_sel_t;
+
     typedef enum logic [1:0] {
         SEL_PC_PLUS_4,
         SEL_LOAD_DATA,
@@ -36,55 +52,55 @@ package DEF;
     typedef union packed {
         // R-type
         struct packed {
-            logic [6:0] opcode;
-            logic [4:0] rd;
-            logic [2:0] func3;
-            logic [4:0] rs1;
-            logic [4:0] rs2;
             logic [6:0] func7;
+            logic [4:0] rs2;
+            logic [4:0] rs1;
+            logic [2:0] func3;
+            logic [4:0] rd;
+            logic [6:0] opcode;
         } R_TYPE;
         // I-type
         struct packed {
-            logic [6:0]  opcode;
-            logic [4:0]  rd;
-            logic [2:0]  func3;
-            logic [4:0]  rs1;
             logic [11:0] imm_11_0;
+            logic [4:0]  rs1;
+            logic [2:0]  func3;
+            logic [4:0]  rd;
+            logic [6:0]  opcode;
         } I_TYPE;
         // S-type
         struct packed {
-            logic [6:0] opcode;
-            logic [4:0] imm_4_0;
-            logic [2:0] func3;
-            logic [4:0] rs1;
-            logic [4:0] rs2;
             logic [6:0] imm_11_5;
+            logic [4:0] rs2;
+            logic [4:0] rs1;
+            logic [2:0] func3;
+            logic [4:0] imm_4_0;
+            logic [6:0] opcode;
         } S_TYPE;
         // U-type
         struct packed {
-            logic [6:0]  opcode;
-            logic [4:0]  rd;
             logic [19:0] imm_31_12;
+            logic [4:0]  rd;
+            logic [6:0]  opcode;
         } U_TYPE;
         // B-type
         struct packed {
-            logic [6:0] opcode;
-            logic imm_11;
-            logic [3:0] imm_4_1;
-            logic [2:0] func3;
-            logic [4:0] rs1;
-            logic [4:0] rs2;
-            logic [5:0] imm_10_5;
             logic imm_12;
+            logic [5:0] imm_10_5;
+            logic [4:0] rs2;
+            logic [4:0] rs1;
+            logic [2:0] func3;
+            logic [3:0] imm_4_1;
+            logic imm_11;
+            logic [6:0] opcode;
         } B_TYPE;
         // J-type
         struct packed {
-            logic [6:0] opcode;
-            logic [4:0] rd;
-            logic [7:0] imm_19_12;
-            logic imm_11;
-            logic [9:0] imm_10_1;
             logic imm_20;
+            logic [9:0] imm_10_1;
+            logic imm_11;
+            logic [7:0] imm_19_12;
+            logic [4:0] rd;
+            logic [6:0] opcode;
         } J_TYPE;
         logic [31:0] raw;
     } inst_t;
@@ -151,14 +167,13 @@ package DEF;
 
     // pack for pipeline
     typedef enum logic {
-        REG_DATA,
-        W_FORWARDING
+        D_REG_DATA,
+        W_FORWARDING_D
     } D_data_sel;
 
     typedef enum logic [1:0] {
-        REG_DATA,
-        M_FORWARDING,
-        W_FORWARDING
+        E_REG_DATA,
+        M_FORWARDING_E,
+        W_FORWARDING_E
     } E_data_sel;
-    
 endpackage : DEF

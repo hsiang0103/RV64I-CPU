@@ -7,10 +7,6 @@ module ALU
     output dw alu_out
 );
 
-function dw twos_complement(dw input);
-    return (~input + 64'd1);
-endfunction : twos_complement
-
 dw pre_calculate;
 logic [5:0] shamt;
 
@@ -48,7 +44,7 @@ always_comb begin
             pre_calculate = operand_1 & operand_2;
         end
         ALU_OP_SUB: begin
-            pre_calculate = operand_1 + twos_complement(operand_2); 
+            pre_calculate = operand_1 - operand_2; 
         end
         ALU_OP_SRA: begin
             if(alu_control.alu_width != ALU_OP_64) begin
@@ -64,5 +60,5 @@ always_comb begin
     endcase
 end
 
-assign alu_out = (alu_control.alu_width == ALU_OP_64) ? pre_calculate : {{32{pre_calculate[31]}}, pre_calculate};
+assign alu_out = (alu_control.alu_width == ALU_OP_64) ? pre_calculate : {{32{pre_calculate[31]}}, pre_calculate[31:0]};
 endmodule : ALU

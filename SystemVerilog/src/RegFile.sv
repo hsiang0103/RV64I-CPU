@@ -9,7 +9,9 @@ module RegFile
     input logic [4:0] rd_index,
     input dw rd_data,
     output dw rs1_data,
-    output dw rs2_data
+    output dw rs2_data,
+    output dw reg_a0,
+    output dw reg_a1
 );
     dw mem[32];  // register file
     always_ff @(posedge clk or negedge rst) begin
@@ -26,4 +28,7 @@ module RegFile
     /* assign output read data */
     assign rs1_data = mem[rs1_index];
     assign rs2_data = mem[rs2_index];
+    /* for ECALL handling */
+    assign reg_a0   = mem[10];
+    assign reg_a1   = mem[11];
 endmodule

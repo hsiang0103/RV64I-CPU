@@ -5,6 +5,9 @@ module Controller
     input logic rst,//
     /* inst information */
     input inst_t inst,//
+    /* a0 and a1 for ECALL handle */
+    input dw reg_a0,
+    input dw reg_a1,
     /* next PC select */
     output logic next_pc_sel,//
     /* IM write control */
@@ -23,28 +26,28 @@ module Controller
     /* write-back select */
     output wb_sel_t wb_sel, //
     /* halt signal (for testbench to monitor) */
-    output logic halt
+    output logic halt,
     output logic stall,//
     output logic [4:0] W_rd,//
-    output LOAD_FUNC3 W_f3,//
+    output logic [2:0] W_f3,//
     output D_data_sel D_rs1_data_sel,//
     output D_data_sel D_rs2_data_sel,//
     output E_data_sel E_rs1_data_sel,//
     output E_data_sel E_rs2_data_sel//
 );
-    INST_OPCODE D_op, E_op, M_op, W_op; 
+    logic [6:0] D_op, E_op, M_op, W_op; 
     logic [2:0] D_f3, E_f3, M_f3;
     logic [4:0] D_rd, E_rd, M_rd, E_rs1, E_rs2, D_rs1, D_rs2;
     logic is_D_use_rs1, is_D_use_rs2, is_W_use_rd;
     logic is_E_use_rs1, is_E_use_rs2, is_M_use_rd;
     logic D_f7, E_f7;
 
-    assign D_op = inst.R_type.opcode;
-    assign D_f3 = inst.R_type.func3;
-    assign D_rs1 = inst.R_type.rs1;
-    assign D_rs2 = inst.R_type.rs2;
-    assign D_rd = inst.R_type.rd;
-    assign D_f7 = inst.R_type.func7[5];
+    assign D_op = inst.R_TYPE.opcode;
+    assign D_f3 = inst.R_TYPE.func3;
+    assign D_rs1 = inst.R_TYPE.rs1;
+    assign D_rs2 = inst.R_TYPE.rs2;
+    assign D_rd = inst.R_TYPE.rd;
+    assign D_f7 = inst.R_TYPE.func7[5];
 
     always_ff @(posedge clk or posedge rst) begin
         if(rst) begin
@@ -144,7 +147,7 @@ module Controller
                 alu_control.alu_op = ALU_OP_AND;
             end
             default: begin
-                alu_control.alu_op = 4'd10;
+                alu_control.alu_op = ALU_OP_ADD;
             end
             endcase
         end
@@ -170,7 +173,7 @@ module Controller
                 end
             end
             default: begin
-                alu_control.alu_op = 4'd10;
+                alu_control.alu_op = ALU_OP_ADD;
             end
             endcase
         end
@@ -211,7 +214,7 @@ module Controller
                 alu_control.alu_op = ALU_OP_AND;
             end
             default: begin
-                alu_control.alu_op = 4'd10;
+                alu_control.alu_op = ALU_OP_ADD;
             end
             endcase    
         end
@@ -237,7 +240,7 @@ module Controller
                 end
             end
             default: begin
-                alu_control.alu_op = 4'd10;
+                alu_control.alu_op = ALU_OP_ADD;
             end
             endcase
         end
@@ -266,7 +269,7 @@ module Controller
             alu_control.alu_op = ALU_OP_ADD;
         end
         default: begin
-            alu_control.alu_op = 4'd10;
+            alu_control.alu_op = ALU_OP_ADD;
         end
         endcase
     end
@@ -306,11 +309,11 @@ module Controller
             is_W_use_rd = 1'd1;
         end
     end
-
+    logic is_D_rs1_W_rd_overlap, is_D_rs2_W_rd_overlap;
     assign is_D_rs1_W_rd_overlap = (is_D_use_rs1 & is_W_use_rd & (D_rs1 == W_rd) & (W_rd !=0));
     assign is_D_rs2_W_rd_overlap = (is_D_use_rs2 & is_W_use_rd & (D_rs2 == W_rd) & (W_rd !=0));
-    assign D_rs1_data_sel = (is_D_rs1_W_rd_overlap)? W_FORWARDING:REG_DATA;
-    assign D_rs2_data_sel = (is_D_rs2_W_rd_overlap)? W_FORWARDING:REG_DATA;
+    assign D_rs1_data_sel = (is_D_rs1_W_rd_overlap)? W_FORWARDING_D:D_REG_DATA;
+    assign D_rs2_data_sel = (is_D_rs2_W_rd_overlap)? W_FORWARDING_D:D_REG_DATA;
 
 // check stage E, M or W overlap
     always_comb begin
@@ -337,13 +340,13 @@ module Controller
             is_M_use_rd = 1'd1;
         end
     end
-
+    logic is_E_rs1_W_rd_overlap, is_E_rs1_M_rd_overlap, is_E_rs2_W_rd_overlap, is_E_rs2_M_rd_overlap;
     assign is_E_rs1_W_rd_overlap = (is_E_use_rs1 & is_W_use_rd & (E_rs1 == W_rd) & (W_rd != 0));
     assign is_E_rs1_M_rd_overlap = (is_E_use_rs1 & is_M_use_rd & (E_rs1 == M_rd) & (M_rd != 0));
     assign is_E_rs2_W_rd_overlap = (is_E_use_rs2 & is_W_use_rd & (E_rs2 == W_rd) & (W_rd != 0));
     assign is_E_rs2_M_rd_overlap = (is_E_use_rs2 & is_M_use_rd & (E_rs2 == M_rd) & (M_rd != 0));
-    assign E_rs1_data_sel = (is_E_rs1_M_rd_overlap)? M_FORWARDING: (is_E_rs1_W_rd_overlap)? W_FORWARDING:REG_DATA;
-    assign E_rs2_data_sel = (is_E_rs2_M_rd_overlap)? M_FORWARDING: (is_E_rs2_W_rd_overlap)? W_FORWARDING:REG_DATA;
+    assign E_rs1_data_sel = (is_E_rs1_M_rd_overlap)? M_FORWARDING_E: (is_E_rs1_W_rd_overlap)? W_FORWARDING_E:E_REG_DATA;
+    assign E_rs2_data_sel = (is_E_rs2_M_rd_overlap)? M_FORWARDING_E: (is_E_rs2_W_rd_overlap)? W_FORWARDING_E:E_REG_DATA;
 
 // alu operand select
     always_comb begin
@@ -422,6 +425,7 @@ module Controller
         end
     end
 // stall if RAW (load and use immediately)
+    logic is_DE_overlap, is_D_rs1_E_rd_overlap, is_D_rs2_E_rd_overlap;
     assign stall = (E_op == LOAD) & is_DE_overlap;
     assign is_DE_overlap = (is_D_rs1_E_rd_overlap | is_D_rs2_E_rd_overlap);
     assign is_D_rs1_E_rd_overlap = is_D_use_rs1 & (D_rs1 == E_rd) & (E_rd != 0);

@@ -11,7 +11,7 @@ module Memory
 
     /* main memory logic */
     always_ff @(posedge clk) begin
-        unique if (w_mask == 8'b11111111) begin
+        unique0 if (w_mask == 8'b11111111) begin
             for (logic [15:0] i = 0; i < 8; i++) begin
                 mem[address+i] <= write_data[8*i+:8];
             end
@@ -24,8 +24,6 @@ module Memory
             mem[address+1] <= write_data[8+:8];
         end else if (w_mask == 8'b00000001) begin
             mem[address] <= write_data[0+:8];
-        end else if (w_mask == 8'd0) begin
-            // empty logic
         end
     end
     /* assign output read data */

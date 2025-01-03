@@ -10,9 +10,9 @@ module Core
     /* verilator lint_off UNUSEDSIGNAL */
     logic [31:0] inst, inst_dummy, inst_D;
     /* verilator lint_on UNUSEDSIGNAL */
-    logic next_pc_sel;
-    dw next_pc, current_pc, current_pc_plus_4, current_pc_D, current_pc_E;
-    dw imm_ext_out, reg_write_data, rs1_read_data, rs2_read_data;
+    next_pc_sel_t next_pc_sel;
+    dw next_pc, current_pc, current_pc_plus_4, alu_out_as_pc, current_pc_D, current_pc_E;
+    dw imm_ext_out, reg_write_data, rs1_read_data, rs2_read_data, reg_a0, reg_a1;
     dw alu_out, dm_read_data, ldfilter_out_data;
     logic [2:0] W_f3;
     logic [4:0] rs1_index, rs2_index, rd_index, W_rd;
@@ -20,7 +20,8 @@ module Core
 
 
     assign current_pc_plus_4 = current_pc + 64'd4;
-    assign next_pc = (next_pc_sel) ? alu_out : current_pc_plus_4;
+    assign alu_out_as_pc = alu_out & (~64'd1);  // make the LSB be always zero
+    assign next_pc = (next_pc_sel == NEXT_PC_SEL_TARGET) ? alu_out_as_pc : current_pc_plus_4;
     /* Program Counter */
     PC pc (
         .clk(clk),
@@ -50,7 +51,7 @@ module Core
         .stall(stall),
         .jb(next_pc_sel),
         .current_pc_D(current_pc_D),
-        .inst_D(inst_D),
+        .inst_D(inst_D)
     );
 
     /* Immediate Extender */
@@ -69,7 +70,7 @@ module Core
         end else if (wb_sel == SEL_LOAD_DATA) begin
             reg_write_data = ldfilter_out_data;
         end else begin
-            reg_write_data = alu_out;
+            reg_write_data = alu_out_W;
         end
     end
     RegFile regfile (
@@ -81,7 +82,9 @@ module Core
         .rd_index(rd_index),
         .rd_data(reg_write_data),
         .rs1_data(rs1_read_data),
-        .rs2_data(rs2_read_data)
+        .rs2_data(rs2_read_data),
+        .reg_a0(reg_a0),
+        .reg_a1(reg_a1)
     );
 
     /* MUX for reg data in D stage */
@@ -109,15 +112,17 @@ module Core
 
     /* ALU */
     E_data_sel E_rs1_data_sel, E_rs2_data_sel;
-    dw rs1_or_current_pc_or_zero, rs2_or_imm, newest_rs1_data, newest_rs2_data, alu_out_M;
-    logic alu_op1_sel, alu_op2_sel, is_lui;
+    dw rs1_or_current_pc_or_zero, rs2_or_imm, newest_rs1_data, newest_rs2_data, alu_out_M, alu_out_W;
+    alu_op1_sel_t alu_op1_sel;
+    alu_op2_sel_t alu_op2_sel;
+    logic is_lui;
     alu_control_packet_t alu_control;
     always_comb begin
         case(E_rs1_data_sel)
-        W_FORWARDING: begin
+        W_FORWARDING_E: begin
             newest_rs1_data = reg_write_data;
         end
-        M_FORWARDING: begin
+        M_FORWARDING_E: begin
             newest_rs1_data = alu_out_M;
         end
         default: begin
@@ -127,10 +132,10 @@ module Core
     end
     always_comb begin
         case(E_rs2_data_sel)
-        W_FORWARDING: begin
+        W_FORWARDING_E: begin
             newest_rs2_data = reg_write_data;
         end
-        M_FORWARDING: begin
+        M_FORWARDING_E: begin
             newest_rs2_data = alu_out_M;
         end
         default: begin
@@ -138,8 +143,8 @@ module Core
         end
         endcase
     end
-    assign rs1_or_current_pc_or_zero = (is_lui) ? 64'd0 : ((alu_op1_sel) ? newest_rs1_data : current_pc);
-    assign rs2_or_imm = (alu_op2_sel) ? newest_rs2_data : imm_ext_out_E;
+    assign rs1_or_current_pc_or_zero = (is_lui) ? 64'd0 : ((alu_op1_sel == ALU_OP1_SEL_RS1) ? newest_rs1_data : current_pc);
+    assign rs2_or_imm = (alu_op2_sel == ALU_OP2_SEL_RS2) ? newest_rs2_data : imm_ext_out_E;
     ALU alu (
         .alu_control(alu_control),
         .operand_1(rs1_or_current_pc_or_zero),
@@ -176,7 +181,7 @@ module Core
     );
 
     /* stage W reg */
-    dw ld_data_W, alu_out_W;
+    dw ld_data_W;
     Reg_W reg_W(
         .clk(clk),
         .rst(rst),
@@ -198,6 +203,8 @@ module Core
         .clk(clk),
         .rst(rst),
         .inst(inst),
+        .reg_a0(reg_a0),
+        .reg_a1(reg_a1),
         .next_pc_sel(next_pc_sel),
         .im_w_mask(im_w_mask),
         .reg_w_en(reg_w_en),
