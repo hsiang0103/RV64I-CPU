@@ -1,3 +1,17 @@
+`include "./src/include/DEF.sv"
+`include "./src/include/intf.sv"
+`include "./src/PC.sv"
+`include "./src/ALU.sv"
+`include "./src/ImmExt.sv"
+`include "./src/LDFilter.sv"
+`include "./src/Memory.sv"
+`include "./src/RegFile.sv"
+`include "./src/BranchComp.sv"
+`include "./src/Controller.sv"
+`include "./src/Reg_D.sv"
+`include "./src/Reg_M.sv"
+`include "./src/Reg_E.sv"
+`include "./src/Reg_W.sv"
 module Core
     import DEF::*;
 (
@@ -13,7 +27,7 @@ module Core
     next_pc_sel_t next_pc_sel;
     dw next_pc, current_pc, current_pc_plus_4, alu_out_as_pc, current_pc_D, current_pc_E;
     dw imm_ext_out, reg_write_data, rs1_read_data, rs2_read_data, reg_a0, reg_a1;
-    dw alu_out, dm_read_data, ldfilter_out_data;
+    dw alu_out, dm_read_data, ldfilter_out_data, alu_out_W;
     logic [2:0] W_f3;
     logic [4:0] rs1_index, rs2_index, rd_index, W_rd;
     logic [7:0] im_w_mask, dm_w_mask;
@@ -112,7 +126,7 @@ module Core
 
     /* ALU */
     E_data_sel E_rs1_data_sel, E_rs2_data_sel;
-    dw rs1_or_current_pc_or_zero, rs2_or_imm, newest_rs1_data, newest_rs2_data, alu_out_M, alu_out_W;
+    dw rs1_or_current_pc_or_zero, rs2_or_imm, newest_rs1_data, newest_rs2_data, alu_out_M;
     alu_op1_sel_t alu_op1_sel;
     alu_op2_sel_t alu_op2_sel;
     logic is_lui;

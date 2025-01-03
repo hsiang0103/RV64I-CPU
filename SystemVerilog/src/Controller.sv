@@ -9,14 +9,14 @@ module Controller
     input dw reg_a0,
     input dw reg_a1,
     /* next PC select */
-    output logic next_pc_sel,//
+    output next_pc_sel_t next_pc_sel,//
     /* IM write control */
     output logic [7:0] im_w_mask,//
     /* Register File Control */
     output logic reg_w_en,//
     /* ALU control */
-    output logic alu_op1_sel,//
-    output logic alu_op2_sel,//
+    output alu_op1_sel_t alu_op1_sel,//
+    output alu_op2_sel_t alu_op2_sel,//
     output logic is_lui,//
     output alu_control_packet_t alu_control,// E_op, E_f3, E_f7
     /* Branch Comparator control */
@@ -351,18 +351,18 @@ module Controller
 // alu operand select
     always_comb begin
         if(E_op == AUIPC || E_op == JAL || E_op == BRANCH) begin
-            alu_op1_sel = 1'b0;
+            alu_op1_sel = ALU_OP1_SEL_PC;
         end
         else begin
-            alu_op1_sel = 1'b1;
+            alu_op1_sel = ALU_OP1_SEL_RS1;
         end
     end
     always_comb begin
         if(E_op == OP || E_op == OP_32) begin
-            alu_op2_sel = 1'b0;
+            alu_op2_sel = ALU_OP2_SEL_RS2;
         end
         else begin
-            alu_op2_sel = 1'b1;
+            alu_op2_sel = ALU_OP2_SEL_IMM;
         end
     end
 
@@ -415,13 +415,13 @@ module Controller
 // next pc select
     always_comb begin
         if(E_op == BRANCH && (bc_control.BrEq || bc_control.BrLt)) begin
-            next_pc_sel = 1'b1;
+            next_pc_sel = NEXT_PC_SEL_TARGET;
         end
         else if(E_op == JAL || E_op == JALR) begin
-            next_pc_sel = 1'b1;
+            next_pc_sel = NEXT_PC_SEL_TARGET;
         end
         else begin
-            next_pc_sel = 1'b0;
+            next_pc_sel = NEXT_PC_SEL_PLUS_4;
         end
     end
 // stall if RAW (load and use immediately)
