@@ -1,5 +1,0 @@
-{"vcs1":{"timestamp_begin":1735931091.201913620, "rt":0.17, "ut":0.07, "st":0.07}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1735931090.217276470}
-{"VCS_COMP_START_TIME": 1735931090.217276470}
-{"VCS_COMP_END_TIME": 1735931092.180011550}
-{"VCS_USER_OPTIONS": "-full64 top_tb.sv -sverilog -full64 -R -debug_access+all +v2k +define+FSDB +PROG=prog0 +FILE=all -notice"}

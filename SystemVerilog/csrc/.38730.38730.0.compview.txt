@@ -1,5 +1,0 @@
-{"vcs1":{"timestamp_begin":1735927828.762169541, "rt":0.16, "ut":0.06, "st":0.08}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1735927827.858895205}
-{"VCS_COMP_START_TIME": 1735927827.858895205}
-{"VCS_COMP_END_TIME": 1735927830.022228081}
-{"VCS_USER_OPTIONS": "-full64 top_tb2.sv -sverilog -full64 -R -debug_access+all +v2k +define +PROG=prog2 +FILE=all -notice"}
