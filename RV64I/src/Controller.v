@@ -15,7 +15,7 @@ module Controller(
     output D_rs2_data_sel, //
     output [1:0] E_rs1_data_sel, //
     output [1:0] E_rs2_data_sel, //
-    output reg E_jb_op1_sel, //
+    output reg E_jb_op1_sel, 
     output reg E_alu_op1_sel, //
     output reg E_alu_op2_sel, //
     output reg [4:0] E_op, //
@@ -25,7 +25,7 @@ module Controller(
     output reg W_wb_en, //
     output reg [4:0] W_rd, //
     output reg [2:0] W_f3, //
-    output reg W_wb_sel, 
+    output reg W_wb_sel, //
     // cache signal //
     output wire waiting,//
     output wire read,//

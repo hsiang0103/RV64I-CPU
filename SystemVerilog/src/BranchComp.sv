@@ -1,8 +1,8 @@
 module BranchComp
     import DEF::*;
 (
-    input dw operand_1,
-    input dw operand_2,
+    input dw operand_1,//
+    input dw operand_2,//
     BranchCompControlIntf.BranchCompSide control
 );
     assign control.BrEq = (operand_1 == operand_2) ? 1'b1 : 1'b0;

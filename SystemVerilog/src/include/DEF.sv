@@ -148,4 +148,17 @@ package DEF;
         ECALL_FUNC12  = 12'b000000000000,
         EBREAK_FUNC12 = 12'b000000000001
     } SYSTEM_FUNC12;
+
+    // pack for pipeline
+    typedef enum logic {
+        REG_DATA,
+        W_FORWARDING
+    } D_data_sel;
+
+    typedef enum logic [1:0] {
+        REG_DATA,
+        M_FORWARDING,
+        W_FORWARDING
+    } E_data_sel;
+    
 endpackage : DEF
