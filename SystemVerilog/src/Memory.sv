@@ -7,11 +7,11 @@ module Memory
     input dw write_data,
     output dw read_data
 );
-    reg [7:0] mem[65536];  // register array to mimic DRAM
+    logic [7:0] mem[65536];  // register array to mimic DRAM
 
     /* main memory logic */
-    always_ff @(posedge clk) begin
-        unique0 if (w_mask == 8'b11111111) begin
+    always @(posedge clk) begin
+        if (w_mask == 8'b11111111) begin
             for (logic [15:0] i = 0; i < 8; i++) begin
                 mem[address+i] <= write_data[8*i+:8];
             end
